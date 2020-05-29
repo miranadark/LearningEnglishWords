@@ -362,4 +362,143 @@ void StartOneNormalLevel(){
     }
 }
 
+void StartOneHardLevel(){
+    string answer = "";
+    switch (incNumber) {
+    case 1:
+        incNumber++;
+        cout << "strawb...\n"; //strawberry
+        cin >> answer;
+        if (answer == "erry") {
+            hardLevelOne[0] = 1;
+        } else {
+            hardLevelOne[0] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 2:
+        incNumber++;
+        cout << "vegeta...\n"; //vegetables
+        cin >> answer;
+        if (answer == "bles") {
+            hardLevelOne[1] = 1;
+        } else {
+            hardLevelOne[1] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 3:
+        incNumber++;
+        cout << "waterm...\n"; //watermelon
+        cin >> answer;
+        if (answer == "elon") {
+            hardLevelOne[2] = 1;
+        } else {
+            hardLevelOne[2] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 4:
+        incNumber++;
+        cout << "pinea...\n"; //pineapple
+        cin >> answer;
+        if (answer == "pple") {
+            hardLevelOne[3] = 1;
+        } else {
+            hardLevelOne[3] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 5:
+        incNumber++;
+        cout << "handkerc...\n"; //handkerchief
+        cin >> answer;
+        if (answer == "hief") {
+            hardLevelOne[4] = 1;
+        } else {
+            hardLevelOne[4] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 6:
+        incNumber++;
+        cout << "experi...\n"; //experience
+        cin >> answer;
+        if (answer == "ence") {
+            hardLevelOne[5] = 1;
+        } else {
+            hardLevelOne[5] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 7:
+        incNumber++;
+        cout << "advan...\n"; //advantage
+        cin >> answer;
+        if (answer == "tage") {
+            hardLevelOne[6] = 1;
+        } else {
+            hardLevelOne[6] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 8:
+        incNumber++;
+        cout << "circumst...\n"; //circumstance
+        cin >> answer;
+        if (answer == "ance") {
+            hardLevelOne[7] = 1;
+        } else {
+            hardLevelOne[7] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 9:
+        incNumber++;
+        cout << "relation...\n"; //relationship
+        cin >> answer;
+        if (answer == "ship") {
+            hardLevelOne[8] = 1;
+        } else {
+            hardLevelOne[8] = 0;
+        }
+        StartOneHardLevel();
+        break;
+    case 10:
+        cout << "develop...\n"; //development
+        cin >> answer;
+        if (answer == "ment") {
+            hardLevelOne[9] = 1;
+        } else {
+            hardLevelOne[9] = 0;
+        }
+        cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
+        cout << "╔═══╤═════════════════╤═══╗\n"
+                "║ № │      Слово      │ # ║\n"
+                "╟───┼─────────────────┼───╢\n"
+                "║ 1 │    strawberry   │ "<< hardLevelOne[0]<<" ║\n"
+                                                              "╟───┼─────────────────┼───╢\n"
+                                                              "║ 2 │    vegetables   │ "<< hardLevelOne[1]<<" ║\n"
+                                                                                                            "╟───┼─────────────────┼───╢\n"
+                                                                                                            "║ 3 │    watermelon   │ "<< hardLevelOne[2]<<" ║\n"
+                                                                                                                                                          "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                          "║ 4 │    pineapple    │ "<< hardLevelOne[3]<<" ║\n"
+                                                                                                                                                                                                        "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                        "║ 5 │   handkerchief  │ "<< hardLevelOne[4]<<" ║\n"
+                                                                                                                                                                                                                                                      "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                      "║ 6 │    experience   │ "<< hardLevelOne[5]<<" ║\n"
+                                                                                                                                                                                                                                                                                                    "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                    "║ 7 │    advantage    │ "<< hardLevelOne[6]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                  "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                  "║ 8 │   circumstance  │ "<< hardLevelOne[7]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                "║ 9 │   relationship  │ "<< hardLevelOne[8]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                              "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                              "║ 10│   development   │ "<< hardLevelOne[9]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "╚═══╧═════════════════╧═══╝\n";
+        PressAnyKey();
+        break;
+    }
+}
+
 #endif // LEARNINGENGLISHWORDS_GAME_H
