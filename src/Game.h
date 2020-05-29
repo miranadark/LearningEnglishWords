@@ -19,6 +19,10 @@ void StartGameLevelOne();
 void StartGameLevelTwo();
 void StartGameLevelThree();
 
+void StartOneEasyLevel();
+void StartOneNormalLevel();
+void StartOneHardLevel();
+
 void PressAnyKey(){
     cout<<"Чтобы выйти в меню, нажмите Enter...";
     if(getch()){
@@ -219,5 +223,143 @@ void StartOneEasyLevel(){
     }
 }
 
+void StartOneNormalLevel(){
+    string answer = "";
+    switch (incNumber) {
+    case 1:
+        incNumber++;
+        cout << "daugh...\n"; //daughter
+        cin >> answer;
+        if (answer == "ter") {
+            normalLevelOne[0] = 1;
+        } else {
+            normalLevelOne[0] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 2:
+        incNumber++;
+        cout << "eleph...\n"; //elephant
+        cin >> answer;
+        if (answer == "ant") {
+            normalLevelOne[1] = 1;
+        } else {
+            normalLevelOne[1] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 3:
+        incNumber++;
+        cout << "build...\n"; //building
+        cin >> answer;
+        if (answer == "ing") {
+            normalLevelOne[2] = 1;
+        } else {
+            normalLevelOne[2] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 4:
+        incNumber++;
+        cout << "univers...\n"; //university
+        cin >> answer;
+        if (answer == "ity") {
+            normalLevelOne[3] = 1;
+        } else {
+            normalLevelOne[3] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 5:
+        incNumber++;
+        cout << "saus...\n"; //sausage
+        cin >> answer;
+        if (answer == "age") {
+            normalLevelOne[4] = 1;
+        } else {
+            normalLevelOne[4] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 6:
+        incNumber++;
+        cout << "hospi...\n"; //hospital
+        cin >> answer;
+        if (answer == "tal") {
+            normalLevelOne[5] = 1;
+        } else {
+            normalLevelOne[5] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 7:
+        incNumber++;
+        cout << "mount...\n"; //mountain
+        cin >> answer;
+        if (answer == "ain") {
+            normalLevelOne[6] = 1;
+        } else {
+            normalLevelOne[6] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 8:
+        incNumber++;
+        cout << "bedr...\n"; //bedroom
+        cin >> answer;
+        if (answer == "oom") {
+            normalLevelOne[7] = 1;
+        } else {
+            normalLevelOne[7] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 9:
+        incNumber++;
+        cout << "chim...\n"; //chimney
+        cin >> answer;
+        if (answer == "ney") {
+            normalLevelOne[8] = 1;
+        } else {
+            normalLevelOne[8] = 0;
+        }
+        StartOneNormalLevel();
+        break;
+    case 10:
+        cout << "wardr...\n"; //wardrobe
+        cin >> answer;
+        if (answer == "obe") {
+            normalLevelOne[9] = 1;
+        } else {
+            normalLevelOne[9] = 0;
+        }
+        cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
+        cout << "╔═══╤═════════════════╤═══╗\n"
+                "║ № │      Слово      │ # ║\n"
+                "╟───┼─────────────────┼───╢\n"
+                "║ 1 │     daughter    │ "<<normalLevelOne[0]<<" ║\n"
+                                                               "╟───┼─────────────────┼───╢\n"
+                                                               "║ 2 │     elephant    │ "<<normalLevelOne[1]<<" ║\n"
+                                                                                                              "╟───┼─────────────────┼───╢\n"
+                                                                                                              "║ 3 │     building    │ "<<normalLevelOne[2]<<" ║\n"
+                                                                                                                                                             "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                             "║ 4 │    university   │ "<<normalLevelOne[3]<<" ║\n"
+                                                                                                                                                                                                            "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                            "║ 5 │     sausage     │ "<<normalLevelOne[4]<<" ║\n"
+                                                                                                                                                                                                                                                           "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                           "║ 6 │     hospital    │ "<<normalLevelOne[5]<<" ║\n"
+                                                                                                                                                                                                                                                                                                          "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                          "║ 7 │     mountain    │ "<<normalLevelOne[6]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                         "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                         "║ 8 │     bedroom     │ "<<normalLevelOne[7]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                        "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                        "║ 9 │     chimney     │ "<<normalLevelOne[8]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       "╟───┼─────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       "║ 10│     wardrobe    │ "<<normalLevelOne[9]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "╚═══╧═════════════════╧═══╝\n";
+        PressAnyKey();
+        break;
+    }
+}
 
 #endif // LEARNINGENGLISHWORDS_GAME_H
