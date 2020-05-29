@@ -11,8 +11,6 @@ int easyLevelTwo[9],normalLevelTwo[9],hardLevelTwo[9];
 int easyLevelThree[9];
 
 void StartGameMenu();
-void getUserName();
-int CheckInput();
 void StartGameLevelOne();
 void StartGameLevelTwo();
 void StartGameLevelThree();
@@ -105,21 +103,6 @@ void StartGameLevelThree(){
     }
 }
 
-void getUserName()
-{
-    string userName = ""; //
-    cout << "Для начала введите своё имя:";
-    cin >> userName;
-}
-
-int CheckInput()
-{
-    int Number = 0;
-    string getLevelNumber;                 //
-    cin >> getLevelNumber;                 //
-    Number = atoi(getLevelNumber.c_str()); //
-    return Number;
-}
 
 
 #endif // LEARNINGENGLISHWORDS_GAME_H
