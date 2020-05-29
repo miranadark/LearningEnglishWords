@@ -5,6 +5,10 @@
 #include "GameMenu.h"
 
 using namespace std;
+int incNumber = 0;
+int easyLevelOne[9],normalLevelOne[9],hardLevelOne[9];
+int easyLevelTwo[9],normalLevelTwo[9],hardLevelTwo[9];
+int easyLevelThree[9];
 
 void StartGameMenu();
 void getUserName();
