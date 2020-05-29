@@ -885,4 +885,142 @@ void StartTwoNormalLevel(){
     }
 }
 
+void StartTwoHardLevel(){
+    string answer = "";
+    switch (incNumber) {
+    case 1:
+        incNumber++;
+        cout << "сосед-"; //neighbor - сосед
+        cin >> answer;
+        if (answer == "neighbor") {
+            hardLevelTwo[0] = 1;
+        } else {
+            hardLevelTwo[0] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 2:
+        incNumber++;
+        cout << "коллега-"; //colleague - коллега
+        cin >> answer;
+        if (answer == "colleague") {
+            hardLevelTwo[1] = 1;
+        } else {
+            hardLevelTwo[1] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 3:
+        incNumber++;
+        cout << "инженер-"; //engineer - инженер
+        cin >> answer;
+        if (answer == "engineer") {
+            hardLevelTwo[2] = 1;
+        } else {
+            hardLevelTwo[2] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 4:
+        incNumber++;
+        cout << "микроволновка-"; //microwave - микроволновка
+        cin >> answer;
+        if (answer == "microwave") {
+            hardLevelTwo[3] = 1;
+        } else {
+            hardLevelTwo[3] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 5:
+        incNumber++;
+        cout << "бутерброд-"; //sandwich - бутерброд
+        cin >> answer;
+        if (answer == "sandwich") {
+            hardLevelTwo[4] = 1;
+        } else {
+            hardLevelTwo[4] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 6:
+        incNumber++;
+        cout << "овощи-"; //vegetables - овощи
+        cin >> answer;
+        if (answer == "vegetables") {
+            hardLevelTwo[5] = 1;
+        } else {
+            hardLevelTwo[5] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 7:
+        incNumber++;
+        cout << "арбуз-"; //watermelon - арбуз
+        cin >> answer;
+        if (answer == "watermelon") {
+            hardLevelTwo[6] = 1;
+        } else {
+            hardLevelTwo[6] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 8:
+        incNumber++;
+        cout << "блокнот-"; //notebook - блокнот
+        cin >> answer;
+        if (answer == "notebook") {
+            hardLevelTwo[7] = 1;
+        } else {
+            hardLevelTwo[7] = 0;
+        }
+        StartTwoHardLevel();
+        break;
+    case 9:
+        incNumber++;
+        cout << "чемодан-"; //suitcase - чемодан
+        cin >> answer;
+        if (answer == "suitcase") {
+            hardLevelTwo[8] = 1;
+        } else {
+            hardLevelTwo[8] = 0;
+        }
+        StartTwoHardLevel();
+    case 10:
+        cout << "клавиатура-"; //keyboard - клавиатура
+        cin >> answer;
+        if (answer == "keyboard") {
+            hardLevelTwo[9] = 1;
+        } else {
+            hardLevelTwo[9] = 0;
+        }
+        cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
+        cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
+                "║ № │       Ответ      │      Слово     │ # ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 1 │     neighbor     │      сосед     │ "<<hardLevelTwo[0]<<" ║\n"
+                                                                               "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                               "║ 2 │     colleague    │     коллега    │ "<<hardLevelTwo[1]<<" ║\n"
+                                                                                                                                              "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                              "║ 3 │     engineer     │     инженер    │ "<<hardLevelTwo[2]<<" ║\n"
+                                                                                                                                                                                                             "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                             "║ 4 │     microwave    │  микроволновка │ "<<hardLevelTwo[3]<<" ║\n"
+                                                                                                                                                                                                                                                                            "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                            "║ 5 │     sandwich     │    бутерброд   │ "<<hardLevelTwo[4]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                           "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                           "║ 6 │    vegetables    │      овощи     │ "<<hardLevelTwo[5]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                          "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                          "║ 7 │    watermelon    │      арбуз     │ "<<hardLevelTwo[6]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "║ 8 │     notebook     │     блокнот    │ "<<hardLevelTwo[7]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "║ 9 │     suitcase     │     чемодан    │ "<<hardLevelTwo[8]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "║ 10│     keyboard     │    клавиатура  │ "<<hardLevelTwo[9]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                        "╚═══╧═════════════════╧═══╝\n";
+        PressAnyKey();
+        break;
+    }
+}
+
 #endif // LEARNINGENGLISHWORDS_GAME_H
