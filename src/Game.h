@@ -607,4 +607,143 @@ void StartGameLevelTwo()
     }
 }
 
+void StartTwoEasyLevel(){
+    string answer = "";
+    switch (incNumber) {
+    case 1:
+        incNumber++;
+        cout << "лампа-"; //lamp - лампа
+        cin >> answer;
+        if (answer == "lamp") {
+            easyLevelTwo[0] = 1;
+        } else {
+            easyLevelTwo[0] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 2:
+        incNumber++;
+        cout << "обувь-"; //shoes - обувь
+        cin >> answer;
+        if (answer == "shoes") {
+            easyLevelTwo[1] = 1;
+        } else {
+            easyLevelTwo[1] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 3:
+        incNumber++;
+        cout << "боль-"; //pain - боль
+        cin >> answer;
+        if (answer == "pain") {
+            easyLevelTwo[2] = 1;
+        } else {
+            easyLevelTwo[2] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 4:
+        incNumber++;
+        cout << "ветер-"; //wind - ветер
+        cin >> answer;
+        if (answer == "wind") {
+            easyLevelTwo[3] = 1;
+        } else {
+            easyLevelTwo[3] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 5:
+        incNumber++;
+        cout << "наличные(деньги)-"; //cash - наличные (деньги)
+        cin >> answer;
+        if (answer == "cash") {
+            easyLevelTwo[4] = 1;
+        } else {
+            easyLevelTwo[4] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 6:
+        incNumber++;
+        cout << "скорость-"; //speed - скорость
+        cin >> answer;
+        if (answer == "speed") {
+            easyLevelTwo[5] = 1;
+        } else {
+            easyLevelTwo[5] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 7:
+        incNumber++;
+        cout << "ненависть-"; //hate - ненависть
+        cin >> answer;
+        if (answer == "hate") {
+            easyLevelTwo[6] = 1;
+        } else {
+            easyLevelTwo[6] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 8:
+        incNumber++;
+        cout << "привычка-"; //habit - привычка
+        cin >> answer;
+        if (answer == "habit") {
+            easyLevelTwo[7] = 1;
+        } else {
+            easyLevelTwo[7] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 9:
+        incNumber++;
+        cout << "слово-"; //word - слово
+        cin >> answer;
+        if (answer == "word") {
+            easyLevelTwo[8] = 1;
+        } else {
+            easyLevelTwo[8] = 0;
+        }
+        StartTwoEasyLevel();
+        break;
+    case 10:
+        cout << "серый-"; //grey - серый
+        cin >> answer;
+        if (answer == "grey") {
+            easyLevelTwo[9] = 1;
+        } else {
+            easyLevelTwo[9] = 0;
+        }
+        cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
+        cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
+                "║ № │       Ответ      │      Слово     │ # ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 1 │       lamp       │      лампа     │ "<<easyLevelTwo[0]<<" ║\n"
+                                                                               "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                               "║ 2 │       shoes      │      обувь     │ "<<easyLevelTwo[1]<<" ║\n"
+                                                                                                                                              "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                              "║ 3 │       pain       │      боль      │ "<<easyLevelTwo[2]<<" ║\n"
+                                                                                                                                                                                                             "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                             "║ 4 │       wind       │      ветер     │ "<<easyLevelTwo[3]<<" ║\n"
+                                                                                                                                                                                                                                                                            "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                            "║ 5 │       cash       │    наличные    │ "<<easyLevelTwo[4]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                           "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                           "║ 6 │       speed      │    скорость    │ "<<easyLevelTwo[5]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                          "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                          "║ 7 │       hate       │    ненависть   │ "<<easyLevelTwo[6]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "║ 8 │       habit      │    привычка    │ "<<easyLevelTwo[7]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "║ 9 │       word       │      слово     │ "<<easyLevelTwo[8]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "║ 10│       grey       │      серый     │ "<<easyLevelTwo[9]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                        "╚═══╧═════════════════╧═══╝\n";
+        PressAnyKey();
+        break;
+    }
+}
+
 #endif // LEARNINGENGLISHWORDS_GAME_H
