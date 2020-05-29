@@ -574,30 +574,33 @@ void StartOneHardLevel()
     }
 }
 
-void StartGameLevelTwo(){
+void StartGameLevelTwo()
+{
     int selectLevel = 0;
     selectLevel = CheckInput();
-    switch (selectLevel){
-    case 1 :
-        cout << "На легком уровне вам будут встречаться более распрестраненные слова!\n";
+    switch (selectLevel) {
+    case 1:
+        cout << "На легком уровне вам будут встречаться более распрестраненные "
+                "слова!\n";
         cout << "Слова нужно писать с маленькой буквы!\n";
         incNumber = 1;
         StartTwoEasyLevel();
         break;
-    case 2 :
+    case 2:
         cout << "На среднем уровне вам будут встречаться менее редкие слова!\n";
         cout << "Слова нужно писать с маленькой буквы!\n";
         incNumber = 1;
         StartTwoNormalLevel();
         break;
-    case 3 :
+    case 3:
         cout << "На сложном уровне вам будут встречаться более редкие слова!\n";
         cout << "Слова нужно писать с маленькой буквы!\n";
         incNumber = 1;
         StartTwoHardLevel();
         break;
     default:
-        cout << "Возможно вы ошиблись, введите число соотвествующее уровню(число из колонки).\n";
+        cout << "Возможно вы ошиблись, введите число соотвествующее "
+                "уровню(число из колонки).\n";
         cout << "Попробуйте еще раз:";
         StartGameLevelTwo();
         break;
