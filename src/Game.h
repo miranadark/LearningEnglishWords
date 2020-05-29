@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include "GameMenu.h"
+#include "CheckInput.h"
+#include <conio.h>
 
 using namespace std;
 int incNumber = 0;
@@ -11,9 +13,20 @@ int easyLevelTwo[9],normalLevelTwo[9],hardLevelTwo[9];
 int easyLevelThree[9];
 
 void StartGameMenu();
+void PressAnyKey();
+
 void StartGameLevelOne();
 void StartGameLevelTwo();
 void StartGameLevelThree();
+
+void PressAnyKey(){
+    cout<<"Чтобы выйти в меню, нажмите Enter...";
+    if(getch()){
+        PrintGameMenu();
+        StartGameMenu();
+    }
+
+}
 
 void StartGameMenu()
 {
