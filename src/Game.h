@@ -10,7 +10,7 @@ using namespace std;
 int incNumber = 0;
 int easyLevelOne[9], normalLevelOne[9], hardLevelOne[9];
 int easyLevelTwo[9], normalLevelTwo[9], hardLevelTwo[9];
-int easyLevelThree[9],normalLevelThree[9],hardLevelThree[9];
+int easyLevelThree[9], normalLevelThree[9], hardLevelThree[9];
 
 void StartGameMenu();
 void PressAnyKey();
@@ -1096,43 +1096,47 @@ void StartTwoHardLevel()
     }
 }
 
-void StartGameLevelThree(){
+void StartGameLevelThree()
+{
     int selectLevel = 0;
     selectLevel = CheckInput();
-    switch (selectLevel){
-    case 1 :
+    switch (selectLevel) {
+    case 1:
         cout << "На легком уровне вам нужно выбрать ответ из 3-х вариантов!\n";
         cout << "Нужно написать число, соответствующее варианту ответа!\n";
         incNumber = 1;
         StartThreeEasyLevel();
         break;
-    case 2 :
+    case 2:
         cout << "На среднем уровне вам нужно выбрать ответ из 4-х вариантов!\n";
         cout << "Нужно написать число, соответствующее варианту ответа!\n";
         incNumber = 1;
         StartThreeNormalLevel();
         break;
-    case 3 :
+    case 3:
         cout << "На сложном уровне вам нужно выбрать ответ из 5-х вариантов!\n";
         cout << "Нужно написать число, соответствующее варианту ответа!\n";
         incNumber = 1;
         StartThreeHardLevel();
         break;
     default:
-        cout << "Возможно вы ошиблись, введите число соотвествующее уровню(число из колонки).\n";
+        cout << "Возможно вы ошиблись, введите число соотвествующее "
+                "уровню(число из колонки).\n";
         cout << "Попробуйте еще раз:";
         StartGameLevelThree();
         break;
     }
 }
 
-void StartThreeEasyLevel(){
+void StartThreeEasyLevel()
+{
     int answer = 0;
     switch (incNumber) {
     case 1:
         incNumber++;
-        cout << "\t\tsweater\n"; //свитер
-        cout << "1.свитер \t2.кофта \t3.водолазка\n"; //sweater - свитер \ кофта \ водолазка
+        cout << "\t\tsweater\n";                      //свитер
+        cout << "1.свитер \t2.кофта \t3.водолазка\n"; // sweater - свитер \
+                                                      // кофта \ водолазка
         answer = CheckInput();
         if (answer == 1) {
             easyLevelThree[0] = 1;
@@ -1143,8 +1147,9 @@ void StartThreeEasyLevel(){
         break;
     case 2:
         incNumber++;
-        cout << "\t\tsock\n"; //носок
-        cout << "1.ботинок \t2.носок \t3.тапок\n"; //sock - носок \ ботинок \ тапок
+        cout << "\t\tsock\n";                      //носок
+        cout << "1.ботинок \t2.носок \t3.тапок\n"; // sock - носок \ ботинок \
+                                                   // тапок
         answer = CheckInput();
         if (answer == 2) {
             easyLevelThree[1] = 1;
@@ -1155,8 +1160,9 @@ void StartThreeEasyLevel(){
         break;
     case 3:
         incNumber++;
-        cout << "\t\ttie\n"; //галстук
-        cout << "1.галстук \t2.шляпа \t3.монокль\n"; //tie - галстук \ шляпа \ монокль
+        cout << "\t\ttie\n";                         //галстук
+        cout << "1.галстук \t2.шляпа \t3.монокль\n"; // tie - галстук \ шляпа \
+                                                     // монокль
         answer = CheckInput();
         if (answer == 1) {
             easyLevelThree[2] = 1;
@@ -1168,7 +1174,10 @@ void StartThreeEasyLevel(){
     case 4:
         incNumber++;
         cout << "\t\twallet\n"; //бумажник
-        cout << "1.чековая книжка \t2.скрепка \t3.бумажник\n"; //wallet - бумажник \ чековая книжка \ скрепка
+        cout << "1.чековая книжка \t2.скрепка \t3.бумажник\n"; // wallet -
+                                                               // бумажник \
+                                                               // чековая книжка
+                                                               // \ скрепка
         answer = CheckInput();
         if (answer == 3) {
             easyLevelThree[3] = 1;
@@ -1179,8 +1188,9 @@ void StartThreeEasyLevel(){
         break;
     case 5:
         incNumber++;
-        cout << "\t\twheel\n"; //колесо
-        cout << "1.колесо \t2.руль \t3.педаль\n"; //wheel - колесо \ руль \ педаль
+        cout << "\t\twheel\n";                    //колесо
+        cout << "1.колесо \t2.руль \t3.педаль\n"; // wheel - колесо \ руль \
+                                                  // педаль
         answer = CheckInput();
         if (answer == 1) {
             easyLevelThree[4] = 1;
@@ -1191,8 +1201,9 @@ void StartThreeEasyLevel(){
         break;
     case 6:
         incNumber++;
-        cout << "\t\tpen\n"; //ручка
-        cout << "1.ручка \t2.карандаш \t3.перо\n"; //pen – ручка \ карандаш \ перо
+        cout << "\t\tpen\n";                       //ручка
+        cout << "1.ручка \t2.карандаш \t3.перо\n"; // pen – ручка \ карандаш \
+                                                   // перо
         answer = CheckInput();
         if (answer == 1) {
             easyLevelThree[5] = 1;
@@ -1203,8 +1214,9 @@ void StartThreeEasyLevel(){
         break;
     case 7:
         incNumber++;
-        cout << "\t\tbook\n"; //книга
-        cout << "1.тетрадь \t2.подставка \t3.книга\n"; //book - книга \ тетрадь \ подставка
+        cout << "\t\tbook\n";                          //книга
+        cout << "1.тетрадь \t2.подставка \t3.книга\n"; // book - книга \ тетрадь
+                                                       // \ подставка
         answer = CheckInput();
         if (answer == 3) {
             easyLevelThree[6] = 1;
@@ -1215,8 +1227,9 @@ void StartThreeEasyLevel(){
         break;
     case 8:
         incNumber++;
-        cout << "\t\tpaper\n"; //бумага
-        cout << "1.бумага \t2.газета \t3.водолазка\n"; //paper - бумага \ газета \ журнал
+        cout << "\t\tpaper\n";                         //бумага
+        cout << "1.бумага \t2.газета \t3.водолазка\n"; // paper - бумага \
+                                                       // газета \ журнал
         answer = CheckInput();
         if (answer == 1) {
             easyLevelThree[7] = 1;
@@ -1227,8 +1240,8 @@ void StartThreeEasyLevel(){
         break;
     case 9:
         incNumber++;
-        cout << "\t\tsummer\n"; //лето
-        cout << "1.лето \t2.осень \t3.зима\n"; //summer - лето \ осень \ зима
+        cout << "\t\tsummer\n";                //лето
+        cout << "1.лето \t2.осень \t3.зима\n"; // summer - лето \ осень \ зима
         answer = CheckInput();
         if (answer == 1) {
             easyLevelThree[8] = 1;
@@ -1238,8 +1251,8 @@ void StartThreeEasyLevel(){
         StartThreeEasyLevel();
         break;
     case 10:
-        cout << "\t\tjune\n"; //июнь
-        cout << "1.июнь \t2.июнь \t3.август \n"; //June - июнь \ июль \ август
+        cout << "\t\tjune\n";                    //июнь
+        cout << "1.июнь \t2.июнь \t3.август \n"; // June - июнь \ июль \ август
         answer = CheckInput();
         if (answer == 2) {
             easyLevelThree[9] = 1;
@@ -1250,38 +1263,61 @@ void StartThreeEasyLevel(){
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Слово      │      Ответ     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
-                "║ 1 │      sweater     │     свитер     │ "<<easyLevelThree[0]<<" ║\n"
-                                                                                 "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                 "║ 2 │       sock       │      носок     │ "<<easyLevelThree[1]<<" ║\n"
-                                                                                                                                                  "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                  "║ 3 │       tie        │     галстук    │ "<<easyLevelThree[2]<<" ║\n"
-                                                                                                                                                                                                                   "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                   "║ 4 │      wallet      │     бумажник   │ "<<easyLevelThree[3]<<" ║\n"
-                                                                                                                                                                                                                                                                                    "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                    "║ 5 │      wheel       │     колесо     │ "<<easyLevelThree[4]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                     "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                     "║ 6 │       pen        │      ручка     │ "<<easyLevelThree[5]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                      "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                      "║ 7 │       book       │      книга     │ "<<easyLevelThree[6]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "║ 8 │       paper      │     бумага     │ "<<easyLevelThree[7]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "║ 9 │      summer      │      лето      │ "<<easyLevelThree[8]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "║ 10│       june       │      июнь      │ "<<easyLevelThree[9]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "╚═══╧═════════════════╧═══╝\n";
+                "║ 1 │      sweater     │     свитер     │ "
+             << easyLevelThree[0]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 2 │       sock       │      носок     │ "
+             << easyLevelThree[1]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 3 │       tie        │     галстук    │ "
+             << easyLevelThree[2]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 4 │      wallet      │     бумажник   │ "
+             << easyLevelThree[3]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 5 │      wheel       │     колесо     │ "
+             << easyLevelThree[4]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 6 │       pen        │      ручка     │ "
+             << easyLevelThree[5]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 7 │       book       │      книга     │ "
+             << easyLevelThree[6]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 8 │       paper      │     бумага     │ "
+             << easyLevelThree[7]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 9 │      summer      │      лето      │ "
+             << easyLevelThree[8]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 10│       june       │      июнь      │ "
+             << easyLevelThree[9]
+             << " ║\n"
+                "╚═══╧══════════════════╧════════════════╧═══╝\n";
+        "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
         break;
     }
 }
 
-void StartThreeNormalLevel(){
+void StartThreeNormalLevel()
+{
     int answer = 0;
     switch (incNumber) {
     case 1:
         incNumber++;
-        cout << "\t\tgarbage\n"; //мусор
-        cout << "1.таможня \t2.гараж \t3.мусор\n"; //garbage - мусор \ гараж \ таможня
+        cout << "\t\tgarbage\n";                   //мусор
+        cout << "1.таможня \t2.гараж \t3.мусор\n"; // garbage - мусор \ гараж \
+                                                   // таможня
         answer = CheckInput();
         if (answer == 3) {
             normalLevelThree[0] = 1;
@@ -1292,8 +1328,9 @@ void StartThreeNormalLevel(){
         break;
     case 2:
         incNumber++;
-        cout << "\t\tguest\n"; //гость
-        cout << "1.товарищ \t2.гость \t3.коллега\n"; //guest - гость \ товарищ \ коллега
+        cout << "\t\tguest\n";                       //гость
+        cout << "1.товарищ \t2.гость \t3.коллега\n"; // guest - гость \ товарищ
+                                                     // \ коллега
         answer = CheckInput();
         if (answer == 2) {
             normalLevelThree[1] = 1;
@@ -1303,8 +1340,9 @@ void StartThreeNormalLevel(){
         StartThreeNormalLevel();
     case 3:
         incNumber++;
-        cout << "\t\tlawyer\n"; //адвокат
-        cout << "1.адвокат \t2.повар \t3.учитель\n"; //lawyer - адвокат \ повар \ учитель
+        cout << "\t\tlawyer\n";                      //адвокат
+        cout << "1.адвокат \t2.повар \t3.учитель\n"; // lawyer - адвокат \ повар
+                                                     // \ учитель
         answer = CheckInput();
         if (answer == 1) {
             normalLevelThree[2] = 1;
@@ -1315,8 +1353,9 @@ void StartThreeNormalLevel(){
         break;
     case 4:
         incNumber++;
-        cout << "\t\tsquirrel\n"; //белка
-        cout << "1.жираф \t2.белка \t3.птица\n"; //squirrel - белка \ птица \ жираф
+        cout << "\t\tsquirrel\n";                //белка
+        cout << "1.жираф \t2.белка \t3.птица\n"; // squirrel - белка \ птица \
+                                                 // жираф
         answer = CheckInput();
         if (answer == 2) {
             normalLevelThree[3] = 1;
@@ -1327,8 +1366,9 @@ void StartThreeNormalLevel(){
         break;
     case 5:
         incNumber++;
-        cout << "\t\tmonkey\n"; //обезьяна
-        cout << "1.обезьяна \t2.медведь \t3.лошадь\n"; //monkey - обезьяна \ медведь \ лошадь
+        cout << "\t\tmonkey\n";                        //обезьяна
+        cout << "1.обезьяна \t2.медведь \t3.лошадь\n"; // monkey - обезьяна \
+                                                       // медведь \ лошадь
         answer = CheckInput();
         if (answer == 1) {
             normalLevelThree[4] = 1;
@@ -1339,8 +1379,9 @@ void StartThreeNormalLevel(){
         break;
     case 6:
         incNumber++;
-        cout << "\t\tstation\n"; //станция
-        cout << "1.парковка \t2.остановка \t3.станция\n"; //station - станция \ остановка \ парковка
+        cout << "\t\tstation\n";                          //станция
+        cout << "1.парковка \t2.остановка \t3.станция\n"; // station - станция \
+                                                          // остановка \ парковка
         answer = CheckInput();
         if (answer == 3) {
             normalLevelThree[5] = 1;
@@ -1351,8 +1392,9 @@ void StartThreeNormalLevel(){
         break;
     case 7:
         incNumber++;
-        cout << "\t\tmountain\n"; //гора
-        cout << "1.гора \t2.холм \t3.низина\n"; //mountain - гора \ холм \ низина
+        cout << "\t\tmountain\n";               //гора
+        cout << "1.гора \t2.холм \t3.низина\n"; // mountain - гора \ холм \
+                                                // низина
         answer = CheckInput();
         if (answer == 1) {
             normalLevelThree[6] = 1;
@@ -1363,8 +1405,9 @@ void StartThreeNormalLevel(){
         break;
     case 8:
         incNumber++;
-        cout << "\t\tmirror\n"; //зеркало
-        cout << "1.диван \t2.зеркало \t3.ковер\n"; //mirror - зеркало \ ковер \ диван
+        cout << "\t\tmirror\n";                    //зеркало
+        cout << "1.диван \t2.зеркало \t3.ковер\n"; // mirror - зеркало \ ковер \
+                                                   // диван
         answer = CheckInput();
         if (answer == 2) {
             normalLevelThree[7] = 1;
@@ -1375,8 +1418,8 @@ void StartThreeNormalLevel(){
         break;
     case 9:
         incNumber++;
-        cout << "\t\tporridge\n"; //каша
-        cout << "1.каша \t2.гриб \t3.салат\n"; //porridge - каша \ гриб \ салат
+        cout << "\t\tporridge\n";              //каша
+        cout << "1.каша \t2.гриб \t3.салат\n"; // porridge - каша \ гриб \ салат
         answer = CheckInput();
         if (answer == 1) {
             normalLevelThree[8] = 1;
@@ -1386,8 +1429,9 @@ void StartThreeNormalLevel(){
         StartThreeNormalLevel();
         break;
     case 10:
-        cout << "\t\tsurname\n"; //фамилия
-        cout << "1.имя \t2.фамилия \t3.отчество\n"; //surname - фамилия \ имя \ отчество
+        cout << "\t\tsurname\n";                    //фамилия
+        cout << "1.имя \t2.фамилия \t3.отчество\n"; // surname - фамилия \ имя \
+                                                    // отчество
         answer = CheckInput();
         if (answer == 2) {
             normalLevelThree[9] = 1;
@@ -1398,26 +1442,236 @@ void StartThreeNormalLevel(){
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Слово      │      Ответ     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
-                "║ 1 │      garbage     │      мусор     │ "<<normalLevelThree[0]<<" ║\n"
-                                                                                   "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                   "║ 2 │       guest      │      гость     │ "<<normalLevelThree[1]<<" ║\n"
-                                                                                                                                                      "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                      "║ 3 │      lawyer      │     адвокат    │ "<<normalLevelThree[2]<<" ║\n"
-                                                                                                                                                                                                                         "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                         "║ 4 │     squirrel     │      белка     │ "<<normalLevelThree[3]<<" ║\n"
-                                                                                                                                                                                                                                                                                            "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                            "║ 5 │      monkey      │     обезьяна   │ "<<normalLevelThree[4]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                               "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                               "║ 6 │      station     │     станция    │ "<<normalLevelThree[5]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                  "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                  "║ 7 │      mountain    │      гора      │ "<<normalLevelThree[6]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     "║ 8 │      mirror      │     зеркало    │ "<<normalLevelThree[7]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "║ 9 │     porridge     │      каша      │ "<<normalLevelThree[8]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           "╟───┼──────────────────┼────────────────┼───╢\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           "║ 10│     surname      │     фамилия    │ "<<normalLevelThree[9]<<" ║\n"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "╚═══╧═════════════════╧═══╝\n";
+                "║ 1 │      garbage     │      мусор     │ "
+             << normalLevelThree[0]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 2 │       guest      │      гость     │ "
+             << normalLevelThree[1]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 3 │      lawyer      │     адвокат    │ "
+             << normalLevelThree[2]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 4 │     squirrel     │      белка     │ "
+             << normalLevelThree[3]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 5 │      monkey      │     обезьяна   │ "
+             << normalLevelThree[4]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 6 │      station     │     станция    │ "
+             << normalLevelThree[5]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 7 │      mountain    │      гора      │ "
+             << normalLevelThree[6]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 8 │      mirror      │     зеркало    │ "
+             << normalLevelThree[7]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 9 │     porridge     │      каша      │ "
+             << normalLevelThree[8]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 10│     surname      │     фамилия    │ "
+             << normalLevelThree[9]
+             << " ║\n"
+                "╚═══╧══════════════════╧════════════════╧═══╝\n";
+        "╚═══╧══════════════════╧════════════════╧═══╝\n";
+        "╚═══╧═════════════════╧═══╝\n";
+        PressAnyKey();
+        break;
+    }
+}
+
+void StartThreeHardLevel()
+{
+    int answer = 0;
+    switch (incNumber) {
+    case 1:
+        incNumber++;
+        cout << "\t\tyesterday\n";                  //вчера
+        cout << "1.вчера \t2.сегодня \t3.завтра\n"; // yesterday - вчера \
+                                                    // сегодня \ завтра
+        answer = CheckInput();
+        if (answer == 1) {
+            hardLevelThree[0] = 1;
+        } else {
+            hardLevelThree[0] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 2:
+        incNumber++;
+        cout << "\t\tbreakfast\n";               //завтрак
+        cout << "1.завтрак \t2.обед \t3.ужин\n"; // breakfast - завтрак \ обед \
+                                                 // ужин
+        answer = CheckInput();
+        if (answer == 1) {
+            hardLevelThree[1] = 1;
+        } else {
+            hardLevelThree[1] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 3:
+        incNumber++;
+        cout << "\t\tfrying pan\n";                       //сковородка
+        cout << "1.чайник \t2.сковородка \t3.кастрюля\n"; // frying pan -
+                                                          // сковородка \
+                                                          // кастрюля \ чайник
+        answer = CheckInput();
+        if (answer == 2) {
+            hardLevelThree[2] = 1;
+        } else {
+            hardLevelThree[2] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 4:
+        incNumber++;
+        cout << "\t\traspberry\n";                   //малина
+        cout << "1.вишня \t2.малина \t3.клубника\n"; // raspberry - малина \
+                                                     // клубника \ вишня
+        answer = CheckInput();
+        if (answer == 2) {
+            hardLevelThree[3] = 1;
+        } else {
+            hardLevelThree[3] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 5:
+        incNumber++;
+        cout << "\t\tsidewalk\n";                       //тротуар
+        cout << "1.асфальт \t2.тротуар \t3.тропинка\n"; // sidewalk - тротуар \
+                                                        // асфальт \ тропинка
+        answer = CheckInput();
+        if (answer == 2) {
+            hardLevelThree[4] = 1;
+        } else {
+            hardLevelThree[4] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 6:
+        incNumber++;
+        cout << "\t\tcrossroads\n"; //перекрёсток
+        cout << "1.перекрёсток \t2.поворотник \t3.заезд\n"; // crossroads -
+                                                            // перекрёсток \
+                                                            // поворотник \ заезд
+        answer = CheckInput();
+        if (answer == 1) {
+            hardLevelThree[5] = 1;
+        } else {
+            hardLevelThree[5] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 7:
+        incNumber++;
+        cout << "\t\taccountant\n";                        //бухгалтер
+        cout << "1.работник \t2.бухгалтер \t3.директор\n"; // accountant -
+                                                           // бухгалтер \
+                                                           // работник \ директор
+        answer = CheckInput();
+        if (answer == 2) {
+            hardLevelThree[6] = 1;
+        } else {
+            hardLevelThree[6] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 8:
+        incNumber++;
+        cout << "\t\tjournalist\n";                      //журналист
+        cout << "1.журналист \t2.оператор \t3.диктор\n"; // journalist -
+                                                         // журналист \ диктор \
+                                                         // оператор
+        answer = CheckInput();
+        if (answer == 1) {
+            hardLevelThree[7] = 1;
+        } else {
+            hardLevelThree[7] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 9:
+        incNumber++;
+        cout << "\t\tcompetitor\n";                         //конкурент
+        cout << "1.союзник \t2.соработник \t3.конкурент\n"; // competitor -
+                                                            // конкурент \
+                                                            // союзник \
+                                                            // соработник
+        answer = CheckInput();
+        if (answer == 3) {
+            hardLevelThree[8] = 1;
+        } else {
+            hardLevelThree[8] = 0;
+        }
+        StartThreeHardLevel();
+        break;
+    case 10:
+        incNumber++;
+        cout << "\t\tacquaintance\n";              //знакомый
+        cout << "1.враг \t2.знакомый \t3.сосед\n"; // acquaintance - знакомый \
+                                                   // враг \ сосед
+        answer = CheckInput();
+        if (answer == 2) {
+            hardLevelThree[9] = 1;
+        } else {
+            hardLevelThree[9] = 0;
+        }
+        cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
+        cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
+                "║ № │       Слово      │      Ответ     │ # ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 1 │     yesterday    │      вчера     │ "
+             << hardLevelThree[0]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 2 │     breakfast    │     завтрак    │ "
+             << hardLevelThree[1]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 3 │    frying pan    │    сковородка  │ "
+             << hardLevelThree[2]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 4 │     raspberry    │      малина    │ "
+             << hardLevelThree[3]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 5 │      sidewalk    │     тротуар    │ "
+             << hardLevelThree[4]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 6 │     crossroads   │   перекрёсток  │ "
+             << hardLevelThree[5]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 7 │     accountant   │    бухгалтер   │ "
+             << hardLevelThree[6]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 8 │    journalist    │    журналист   │ "
+             << hardLevelThree[7]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 9 │    competitor    │    конкурент   │ "
+             << hardLevelThree[8]
+             << " ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 10│    acquaintance  │     знакомый   │ "
+             << hardLevelThree[9]
+             << " ║\n"
+                "╚═══╧══════════════════╧════════════════╧═══╝\n";
+        "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
         break;
     }
