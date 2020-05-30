@@ -1496,8 +1496,8 @@ void StartThreeHardLevel()
     case 1:
         incNumber++;
         cout << "\t\tyesterday\n";                  //вчера
-        cout << "1.вчера \t2.сегодня \t3.завтра\n"; // yesterday - вчера \
-                                                    // сегодня \ завтра
+        cout << "1.вчера \t2.сегодня \t3.завтра\n"; // yesterday - вчера
+                                                    // сегодня завтра
         answer = CheckInput();
         if (answer == 1) {
             hardLevelThree[0] = 1;
@@ -1509,7 +1509,7 @@ void StartThreeHardLevel()
     case 2:
         incNumber++;
         cout << "\t\tbreakfast\n";               //завтрак
-        cout << "1.завтрак \t2.обед \t3.ужин\n"; // breakfast - завтрак \ обед \
+        cout << "1.завтрак \t2.обед \t3.ужин\n"; // breakfast - завтрак  обед
                                                  // ужин
         answer = CheckInput();
         if (answer == 1) {
@@ -1523,8 +1523,8 @@ void StartThreeHardLevel()
         incNumber++;
         cout << "\t\tfrying pan\n";                       //сковородка
         cout << "1.чайник \t2.сковородка \t3.кастрюля\n"; // frying pan -
-                                                          // сковородка \
-                                                          // кастрюля \ чайник
+                                                          // сковородка
+                                                          // кастрюля чайник
         answer = CheckInput();
         if (answer == 2) {
             hardLevelThree[2] = 1;
@@ -1536,8 +1536,8 @@ void StartThreeHardLevel()
     case 4:
         incNumber++;
         cout << "\t\traspberry\n";                   //малина
-        cout << "1.вишня \t2.малина \t3.клубника\n"; // raspberry - малина \
-                                                     // клубника \ вишня
+        cout << "1.вишня \t2.малина \t3.клубника\n"; // raspberry - малина
+                                                     // клубника вишня
         answer = CheckInput();
         if (answer == 2) {
             hardLevelThree[3] = 1;
@@ -1549,8 +1549,8 @@ void StartThreeHardLevel()
     case 5:
         incNumber++;
         cout << "\t\tsidewalk\n";                       //тротуар
-        cout << "1.асфальт \t2.тротуар \t3.тропинка\n"; // sidewalk - тротуар \
-                                                        // асфальт \ тропинка
+        cout << "1.асфальт \t2.тротуар \t3.тропинка\n"; // sidewalk - тротуар
+                                                        // асфальт тропинка
         answer = CheckInput();
         if (answer == 2) {
             hardLevelThree[4] = 1;
@@ -1563,8 +1563,8 @@ void StartThreeHardLevel()
         incNumber++;
         cout << "\t\tcrossroads\n"; //перекрёсток
         cout << "1.перекрёсток \t2.поворотник \t3.заезд\n"; // crossroads -
-                                                            // перекрёсток \
-                                                            // поворотник \ заезд
+                                                            // перекрёсток
+                                                            // поворотник заезд
         answer = CheckInput();
         if (answer == 1) {
             hardLevelThree[5] = 1;
@@ -1577,8 +1577,8 @@ void StartThreeHardLevel()
         incNumber++;
         cout << "\t\taccountant\n";                        //бухгалтер
         cout << "1.работник \t2.бухгалтер \t3.директор\n"; // accountant -
-                                                           // бухгалтер \
-                                                           // работник \ директор
+                                                           // бухгалтер
+                                                           // работник директор
         answer = CheckInput();
         if (answer == 2) {
             hardLevelThree[6] = 1;
@@ -1591,7 +1591,7 @@ void StartThreeHardLevel()
         incNumber++;
         cout << "\t\tjournalist\n";                      //журналист
         cout << "1.журналист \t2.оператор \t3.диктор\n"; // journalist -
-                                                         // журналист \ диктор \
+                                                         // журналист диктор
                                                          // оператор
         answer = CheckInput();
         if (answer == 1) {
@@ -1605,8 +1605,8 @@ void StartThreeHardLevel()
         incNumber++;
         cout << "\t\tcompetitor\n";                         //конкурент
         cout << "1.союзник \t2.соработник \t3.конкурент\n"; // competitor -
-                                                            // конкурент \
-                                                            // союзник \
+                                                            // конкурент
+                                                            // союзник
                                                             // соработник
         answer = CheckInput();
         if (answer == 3) {
@@ -1619,8 +1619,8 @@ void StartThreeHardLevel()
     case 10:
         incNumber++;
         cout << "\t\tacquaintance\n";              //знакомый
-        cout << "1.враг \t2.знакомый \t3.сосед\n"; // acquaintance - знакомый \
-                                                   // враг \ сосед
+        cout << "1.враг \t2.знакомый \t3.сосед\n"; // acquaintance - знакомый
+                                                   // враг сосед
         answer = CheckInput();
         if (answer == 2) {
             hardLevelThree[9] = 1;
