@@ -1126,4 +1126,153 @@ void StartGameLevelThree(){
     }
 }
 
+void StartThreeEasyLevel(){
+    int answer = 0;
+    switch (incNumber) {
+    case 1:
+        incNumber++;
+        cout << "\t\tsweater\n"; //свитер
+        cout << "1.свитер \t2.кофта \t3.водолазка\n"; //sweater - свитер \ кофта \ водолазка
+        answer = CheckInput();
+        if (answer == 1) {
+            easyLevelThree[0] = 1;
+        } else {
+            easyLevelThree[0] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 2:
+        incNumber++;
+        cout << "\t\tsock\n"; //носок
+        cout << "1.ботинок \t2.носок \t3.тапок\n"; //sock - носок \ ботинок \ тапок
+        answer = CheckInput();
+        if (answer == 2) {
+            easyLevelThree[1] = 1;
+        } else {
+            easyLevelThree[1] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 3:
+        incNumber++;
+        cout << "\t\ttie\n"; //галстук
+        cout << "1.галстук \t2.шляпа \t3.монокль\n"; //tie - галстук \ шляпа \ монокль
+        answer = CheckInput();
+        if (answer == 1) {
+            easyLevelThree[2] = 1;
+        } else {
+            easyLevelThree[2] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 4:
+        incNumber++;
+        cout << "\t\twallet\n"; //бумажник
+        cout << "1.чековая книжка \t2.скрепка \t3.бумажник\n"; //wallet - бумажник \ чековая книжка \ скрепка
+        answer = CheckInput();
+        if (answer == 3) {
+            easyLevelThree[3] = 1;
+        } else {
+            easyLevelThree[3] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 5:
+        incNumber++;
+        cout << "\t\twheel\n"; //колесо
+        cout << "1.колесо \t2.руль \t3.педаль\n"; //wheel - колесо \ руль \ педаль
+        answer = CheckInput();
+        if (answer == 1) {
+            easyLevelThree[4] = 1;
+        } else {
+            easyLevelThree[4] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 6:
+        incNumber++;
+        cout << "\t\tpen\n"; //ручка
+        cout << "1.ручка \t2.карандаш \t3.перо\n"; //pen – ручка \ карандаш \ перо
+        answer = CheckInput();
+        if (answer == 1) {
+            easyLevelThree[5] = 1;
+        } else {
+            easyLevelThree[5] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 7:
+        incNumber++;
+        cout << "\t\tbook\n"; //книга
+        cout << "1.тетрадь \t2.подставка \t3.книга\n"; //book - книга \ тетрадь \ подставка
+        answer = CheckInput();
+        if (answer == 3) {
+            easyLevelThree[6] = 1;
+        } else {
+            easyLevelThree[6] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 8:
+        incNumber++;
+        cout << "\t\tpaper\n"; //бумага
+        cout << "1.бумага \t2.газета \t3.водолазка\n"; //paper - бумага \ газета \ журнал
+        answer = CheckInput();
+        if (answer == 1) {
+            easyLevelThree[7] = 1;
+        } else {
+            easyLevelThree[7] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 9:
+        incNumber++;
+        cout << "\t\tsummer\n"; //лето
+        cout << "1.лето \t2.осень \t3.зима\n"; //summer - лето \ осень \ зима
+        answer = CheckInput();
+        if (answer == 1) {
+            easyLevelThree[8] = 1;
+        } else {
+            easyLevelThree[8] = 0;
+        }
+        StartThreeEasyLevel();
+        break;
+    case 10:
+        cout << "\t\tjune\n"; //июнь
+        cout << "1.июнь \t2.июнь \t3.август \n"; //June - июнь \ июль \ август
+        answer = CheckInput();
+        if (answer == 2) {
+            easyLevelThree[9] = 1;
+        } else {
+            easyLevelThree[9] = 0;
+        }
+        cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
+        cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
+                "║ № │       Слово      │      Ответ     │ # ║\n"
+                "╟───┼──────────────────┼────────────────┼───╢\n"
+                "║ 1 │      sweater     │     свитер     │ "<<easyLevelThree[0]<<" ║\n"
+                                                                                 "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                 "║ 2 │       sock       │      носок     │ "<<easyLevelThree[1]<<" ║\n"
+                                                                                                                                                  "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                  "║ 3 │       tie        │     галстук    │ "<<easyLevelThree[2]<<" ║\n"
+                                                                                                                                                                                                                   "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                   "║ 4 │      wallet      │     бумажник   │ "<<easyLevelThree[3]<<" ║\n"
+                                                                                                                                                                                                                                                                                    "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                    "║ 5 │      wheel       │     колесо     │ "<<easyLevelThree[4]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                     "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                     "║ 6 │       pen        │      ручка     │ "<<easyLevelThree[5]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                      "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                      "║ 7 │       book       │      книга     │ "<<easyLevelThree[6]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "║ 8 │       paper      │     бумага     │ "<<easyLevelThree[7]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "║ 9 │      summer      │      лето      │ "<<easyLevelThree[8]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "╟───┼──────────────────┼────────────────┼───╢\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "║ 10│       june       │      июнь      │ "<<easyLevelThree[9]<<" ║\n"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "╚═══╧══════════════════╧════════════════╧═══╝\n";                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "╚═══╧═════════════════╧═══╝\n";
+        PressAnyKey();
+        break;
+    }
+}
+
 #endif // LEARNINGENGLISHWORDS_GAME_H
