@@ -10,7 +10,7 @@ using namespace std;
 int incNumber = 0;
 int easyLevelOne[9], normalLevelOne[9], hardLevelOne[9];
 int easyLevelTwo[9], normalLevelTwo[9], hardLevelTwo[9];
-int easyLevelThree[9];
+int easyLevelThree[9],normalLevelThree[9],hardLevelThree[9];
 
 void StartGameMenu();
 void PressAnyKey();
@@ -26,6 +26,10 @@ void StartOneHardLevel();
 void StartTwoEasyLevel();
 void StartTwoNormalLevel();
 void StartTwoHardLevel();
+
+void StartThreeEasyLevel();
+void StartThreeNormalLevel();
+void StartThreeHardLevel();
 
 void PressAnyKey()
 {
@@ -1088,6 +1092,36 @@ void StartTwoHardLevel()
         "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
+        break;
+    }
+}
+
+void StartGameLevelThree(){
+    int selectLevel = 0;
+    selectLevel = CheckInput();
+    switch (selectLevel){
+    case 1 :
+        cout << "На легком уровне вам нужно выбрать ответ из 3-х вариантов!\n";
+        cout << "Нужно написать число, соответствующее варианту ответа!\n";
+        incNumber = 1;
+        StartThreeEasyLevel();
+        break;
+    case 2 :
+        cout << "На среднем уровне вам нужно выбрать ответ из 4-х вариантов!\n";
+        cout << "Нужно написать число, соответствующее варианту ответа!\n";
+        incNumber = 1;
+        StartThreeNormalLevel();
+        break;
+    case 3 :
+        cout << "На сложном уровне вам нужно выбрать ответ из 5-х вариантов!\n";
+        cout << "Нужно написать число, соответствующее варианту ответа!\n";
+        incNumber = 1;
+        StartThreeHardLevel();
+        break;
+    default:
+        cout << "Возможно вы ошиблись, введите число соотвествующее уровню(число из колонки).\n";
+        cout << "Попробуйте еще раз:";
+        StartGameLevelThree();
         break;
     }
 }
