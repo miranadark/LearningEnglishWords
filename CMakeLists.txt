@@ -11,4 +11,5 @@ include_directories(test/lib/gtest/googletest/include)
 
 
 add_executable(LearningEnglishWords src/main.cpp src/GameMenu.h src/Game.h src/CheckInput.h)
-target_link_libraries(LearningEnglishWords gtest)
+add_executable(LearningEnglishWords_test test/main_test.cpp)
+target_link_libraries(LearningEnglishWords_test gtest)
