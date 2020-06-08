@@ -123,7 +123,7 @@ int QuestionFunc(string *allanswers,string *allquestions)
 int QuestionFuncGameThree(int *allanswers,string *allquestions)
 {
     int i;
-    int answer;
+    int answer = 0;
     int rightanswer = 0;
     string question = "";
     for (i = 0;i < 10;i++){

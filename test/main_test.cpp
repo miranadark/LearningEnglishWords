@@ -1,4 +1,5 @@
 #include "../src/Game.h"
+#include "test_func.h"
 #include <gtest/gtest.h>
 #include <iostream>
 
@@ -56,6 +57,45 @@ TEST(CheckAnswersTest,CheckAnswerGameThree)
     ASSERT_EQ(result5, 0);
     ASSERT_EQ(result6, 0);
 }
+
+TEST(QuestionTests,QuestionFuncTest)
+{
+    // Given
+    int correct[] = {1,1,1,1,1,1,1,1,1,1};
+    int wrong[] = {0,0,0,0,0,0,0,0,0,0};
+    int complex[] = {1,0,1,1,0,0,0,0,1,0};
+    string allquestions[] = {"driv","chi","frie","plea","sor","gue","nie","cous","work","doct"};
+    string allanswers[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
+    string answers1[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
+    string answers2[] = {"ere","ee","wwwww","ses","rypt","stw","w","qe","e","orer"};
+    string answers3[] = {"er","ewf","nd","se","reey","sqt","cee","irrn","er","orrrrrrr"};
+    // When
+    testQuestionFunc(allanswers, allquestions,answers1);
+    // Then
+    int i;
+    for(i = 0;i < 10;i++)
+        ASSERT_EQ(YourAnswers[i],correct[i]);
+    // When
+    testQuestionFunc(allanswers, allquestions,answers2);
+    // Then
+    for(i = 0;i < 10;i++)
+        ASSERT_EQ(YourAnswers[i],wrong[i]);
+    // When
+    testQuestionFunc(allanswers, allquestions,answers3);
+    // Then
+    ASSERT_EQ(YourAnswers[0],complex[0]);
+    ASSERT_EQ(YourAnswers[1],complex[1]);
+    ASSERT_EQ(YourAnswers[2],complex[2]);
+    ASSERT_EQ(YourAnswers[3],complex[3]);
+    ASSERT_EQ(YourAnswers[4],complex[4]);
+    ASSERT_EQ(YourAnswers[5],complex[5]);
+    ASSERT_EQ(YourAnswers[6],complex[6]);
+    ASSERT_EQ(YourAnswers[7],complex[7]);
+    ASSERT_EQ(YourAnswers[8],complex[8]);
+    ASSERT_EQ(YourAnswers[9],complex[9]);
+}
+
+
 
 int main(int argc, char** argv)
 {
