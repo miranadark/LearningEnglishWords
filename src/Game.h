@@ -8,7 +8,6 @@
 
 using namespace std;
 int incNumber = 0;
-int NumberQ = 0;
 int YourAnswers[9];
 string qEasyGameOne[] = {"driv","chi","frie","plea","sor","gue","nie","cous","work","doct"};
 string aEasyGameOne[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
@@ -118,7 +117,7 @@ int QuestionFunc(string *allanswers,string *allquestions)
         cin >> answer;
         CheckAnswer(answer,rightanswer,i);
     }
-    return 1;
+    return *YourAnswers;
 }
 
 int QuestionFuncGameThree(int *allanswers,string *allquestions)
@@ -134,7 +133,7 @@ int QuestionFuncGameThree(int *allanswers,string *allquestions)
         answer = CheckInput();
         CheckAnswerGameThree(answer,rightanswer,i);
     }
-    return 1;
+    return *YourAnswers;
 }
 
 void StartGameMenu()
