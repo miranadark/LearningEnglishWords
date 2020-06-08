@@ -9,10 +9,15 @@
 using namespace std;
 int incNumber = 0;
 int NumberQ = 0;
-int easyLevelOne[9], normalLevelOne[9], hardLevelOne[9];
+int YourAnswers[9];
+string qEasyGameOne[] = {"driv","chi","frie","plea","sor","gue","nie","cous","work","doct"};
+string aEasyGameOne[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
+string qNormalGameOne[] = {"daugh","eleph","build","univers","saus","hospi","mount","bedr","chim","wardr"};
+string aNormalGameOne[] = {"ter","ant","ing","ity","age","tal","ain","oom","ney","obe"};
+string qHardGameOne[] = {"strawb","vegeta","waterm","pinea","handkerc","experi","advan","circumst","relation","develop"};
+string aHardGameOne[] = {"erry","bles","elon","pple","hief","ence","tage","ance","ship","ment"};
 int easyLevelTwo[9], normalLevelTwo[9], hardLevelTwo[9];
 int easyLevelThree[9], normalLevelThree[9], hardLevelThree[9];
-
 void StartGameMenu();
 void PressAnyKey();
 
@@ -41,15 +46,31 @@ void PressAnyKey()
     }
 }
 
-int CheckAnswer(string answer, string rightanswer)
+int CheckAnswer(string answer, string rightanswer, int i)
 {  
     if (answer == rightanswer) {
-        easyLevelOne[NumberQ] = 1;
+        YourAnswers[i] = 1;
         return 1;
     } else {
-        easyLevelOne[NumberQ] = 0;
+        YourAnswers[i] = 0;
         return 0;
     }
+}
+
+int QuestionFunc(string *allanswers,string *allquestions)
+{
+    int i;
+    string answer = "";
+    string rightanswer = "";
+    string question = "";
+    for (i = 0;i < 10;i++){
+        question = allquestions[i];
+        cout << question + "..." + "\n";
+        rightanswer = allanswers[i];
+        cin >> answer;
+        CheckAnswer(answer,rightanswer,i);
+    }
+    return YourAnswers[9];
 }
 
 void StartGameMenu()
@@ -112,424 +133,154 @@ void StartGameLevelOne()
 
 void StartOneEasyLevel()
 {
-    string answer = "";
-    string rightanswer = "";
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        NumberQ = 0;
-        cout << "driv...\n"; // driver
-        rightanswer = "er";
-        cin >> answer;
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 2:
-        incNumber++;
-        NumberQ++;
-        cout << "chi...\n"; // chief
-        cin >> answer;
-        rightanswer = "ef";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 3:
-        incNumber++;
-        NumberQ++;
-        cout << "frie...\n"; // friend
-        cin >> answer;
-        rightanswer = "nd";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 4:
-        incNumber++;
-        NumberQ++;
-        cout << "plea...\n"; // please
-        cin >> answer;
-        rightanswer = "se";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 5:
-        incNumber++;
-        NumberQ++;
-        cout << "sor...\n"; // sorry
-        cin >> answer;
-        rightanswer = "ry";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 6:
-        incNumber++;
-        NumberQ++;
-        cout << "gue...\n"; // guest
-        cin >> answer;
-        rightanswer = "st";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 7:
-        incNumber++;
-        NumberQ++;
-        cout << "nie...\n"; // niece
-        cin >> answer;
-        rightanswer = "ce";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 8:
-        incNumber++;
-        NumberQ++;
-        cout << "cous...\n"; // cousin
-        cin >> answer;
-        rightanswer = "in";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 9:
-        incNumber++;
-        NumberQ++;
-        cout << "work...\n"; // worker
-        cin >> answer;
-        rightanswer = "er";
-        CheckAnswer(answer,rightanswer);
-        StartOneEasyLevel();
-        break;
-    case 10:
-        NumberQ++;
-        cout << "doct...\n"; // doctor
-        cin >> answer;
-        rightanswer = "or";
-        CheckAnswer(answer,rightanswer);
+    QuestionFunc(aEasyGameOne,qEasyGameOne);
+
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤═════════════════╤═══╗\n"
                 "║ № │      Слово      │ # ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 1 │      driver     │ "
-             << easyLevelOne[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 2 │      chief      │ "
-             << easyLevelOne[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 3 │      friend     │ "
-             << easyLevelOne[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 4 │      please     │ "
-             << easyLevelOne[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 5 │      sorry      │ "
-             << easyLevelOne[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 6 │      guest      │ "
-             << easyLevelOne[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 7 │      niece      │ "
-             << easyLevelOne[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 8 │      cousin     │ "
-             << easyLevelOne[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 9 │      worker     │ "
-             << easyLevelOne[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 10│      doctor     │ "
-             << easyLevelOne[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartOneNormalLevel()
 {
-    string answer = "";
-    string rightanswer ="";
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        NumberQ = 0;
-        cout << "daugh...\n"; // daughter
-        cin >> answer;
-        rightanswer = "ter";
-		CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 2:
-        incNumber++;
-        NumberQ++;
-        cout << "eleph...\n"; // elephant
-        cin >> answer;
-        rightanswer = "ant";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 3:
-        incNumber++;
-        NumberQ++;
-        cout << "build...\n"; // building
-        cin >> answer;
-        rightanswer = "ing";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 4:
-        incNumber++;
-        NumberQ++;
-        cout << "univers...\n"; // university
-        cin >> answer;
-        rightanswer = "ity";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 5:
-        incNumber++;
-        NumberQ++;
-        cout << "saus...\n"; // sausage
-        cin >> answer;
-        rightanswer = "age";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 6:
-        incNumber++;
-        NumberQ++;
-        cout << "hospi...\n"; // hospital
-        cin >> answer;
-        rightanswer = "tal";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 7:
-        incNumber++;
-        NumberQ++;
-        cout << "mount...\n"; // mountain
-        cin >> answer;
-        rightanswer = "ain";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 8:
-        incNumber++;
-        NumberQ++;
-        cout << "bedr...\n"; // bedroom
-        cin >> answer;
-        rightanswer = "oom";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 9:
-        incNumber++;
-        NumberQ++;
-        cout << "chim...\n"; // chimney
-        cin >> answer;
-        rightanswer = "ney";
-        CheckAnswer(answer,rightanswer);
-        StartOneNormalLevel();
-        break;
-    case 10:
-        NumberQ++;
-        cout << "wardr...\n"; // wardrobe
-        cin >> answer;
-        rightanswer = "obe";
-		CheckAnswer(answer,rightanswer);
+    QuestionFunc(aNormalGameOne,qNormalGameOne);
+
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤═════════════════╤═══╗\n"
                 "║ № │      Слово      │ # ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 1 │     daughter    │ "
-             << normalLevelOne[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 2 │     elephant    │ "
-             << normalLevelOne[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 3 │     building    │ "
-             << normalLevelOne[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 4 │    university   │ "
-             << normalLevelOne[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 5 │     sausage     │ "
-             << normalLevelOne[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 6 │     hospital    │ "
-             << normalLevelOne[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 7 │     mountain    │ "
-             << normalLevelOne[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 8 │     bedroom     │ "
-             << normalLevelOne[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 9 │     chimney     │ "
-             << normalLevelOne[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 10│     wardrobe    │ "
-             << normalLevelOne[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartOneHardLevel()
 {
-    string answer = "";
-    string rightanswer = "";
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        NumberQ = 0;
-        cout << "strawb...\n"; // strawberry
-        cin >> answer;
-        rightanswer = "erry";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 2:
-        incNumber++;
-        NumberQ++;
-        cout << "vegeta...\n"; // vegetables
-        cin >> answer;
-        rightanswer = "bles";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 3:
-        incNumber++;
-        NumberQ++;
-        cout << "waterm...\n"; // watermelon
-        cin >> answer;
-        rightanswer = "elon";
-        CheckAnswer(answer,rightanswer);
-        break;
-    case 4:
-        incNumber++;
-        NumberQ++;
-        cout << "pinea...\n"; // pineapple
-        cin >> answer;
-        rightanswer = "pple";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 5:
-        incNumber++;
-        NumberQ++;
-        cout << "handkerc...\n"; // handkerchief
-        cin >> answer;
-        rightanswer = "hief";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 6:
-        incNumber++;
-        NumberQ++;
-        cout << "experi...\n"; // experience
-        cin >> answer;
-        rightanswer = "ence";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 7:
-        incNumber++;
-        NumberQ++;
-        cout << "advan...\n"; // advantage
-        cin >> answer;
-        rightanswer = "tage";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 8:
-        incNumber++;
-        NumberQ++;
-        cout << "circumst...\n"; // circumstance
-        cin >> answer;
-        rightanswer = "ance";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 9:
-        incNumber++;
-        NumberQ++;
-        cout << "relation...\n"; // relationship
-        cin >> answer;
-        rightanswer = "ship";
-        CheckAnswer(answer,rightanswer);
-        StartOneHardLevel();
-        break;
-    case 10:
-        NumberQ++;
-        cout << "develop...\n"; // development
-        cin >> answer;
-        rightanswer = "ment";
-        CheckAnswer(answer,rightanswer);
+	QuestionFunc(aHardGameOne,qHardGameOne);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤═════════════════╤═══╗\n"
                 "║ № │      Слово      │ # ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 1 │    strawberry   │ "
-             << hardLevelOne[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 2 │    vegetables   │ "
-             << hardLevelOne[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 3 │    watermelon   │ "
-             << hardLevelOne[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 4 │    pineapple    │ "
-             << hardLevelOne[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 5 │   handkerchief  │ "
-             << hardLevelOne[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 6 │    experience   │ "
-             << hardLevelOne[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 7 │    advantage    │ "
-             << hardLevelOne[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 8 │   circumstance  │ "
-             << hardLevelOne[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 9 │   relationship  │ "
-             << hardLevelOne[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼─────────────────┼───╢\n"
                 "║ 10│   development   │ "
-             << hardLevelOne[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartGameLevelTwo()
