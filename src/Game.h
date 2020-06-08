@@ -16,7 +16,12 @@ string qNormalGameOne[] = {"daugh","eleph","build","univers","saus","hospi","mou
 string aNormalGameOne[] = {"ter","ant","ing","ity","age","tal","ain","oom","ney","obe"};
 string qHardGameOne[] = {"strawb","vegeta","waterm","pinea","handkerc","experi","advan","circumst","relation","develop"};
 string aHardGameOne[] = {"erry","bles","elon","pple","hief","ence","tage","ance","ship","ment"};
-int easyLevelTwo[9], normalLevelTwo[9], hardLevelTwo[9];
+string qEasyGameTwo[] = {"лампа-","обувь-","боль-","ветер-","наличные(деньги)-","скорость-","ненависть-","привычка-","слово-","серый-"};
+string aEasyGameTwo[] = {"lamp","shoes","pain","wind","cash","speed","hate","habit","word","grey"};
+string qNormalGameTwo[] = {"беспокоить-","глупый-","опасность-","выбор-","воздушный шар-","календарь-","ноутбук-","машина-","ножницы-","очки-"};
+string aNormalGameTwo[] = {"disturb","stupid","danger","choice","balloon","calendar","laptop","machine","scissors","glasses"};
+string qHardGameTwo[] = {"сосед-","коллега-","инженер-","микроволновка-","бутерброд-","овощи-","арбуз-","блокнот-","чемодан-","клавиатура-"};
+string aHardGameTwo[] = {"neighbor","colleague","engineer","microwave","sandwich","vegetables","watermelon","notebook","suitcase","keyboard"};
 int easyLevelThree[9], normalLevelThree[9], hardLevelThree[9];
 void StartGameMenu();
 void PressAnyKey();
@@ -70,7 +75,7 @@ int QuestionFunc(string *allanswers,string *allquestions)
         cin >> answer;
         CheckAnswer(answer,rightanswer,i);
     }
-    return YourAnswers[9];
+    return 1;
 }
 
 void StartGameMenu()
@@ -318,487 +323,158 @@ void StartGameLevelTwo()
 
 void StartTwoEasyLevel()
 {
-    string answer = "";
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        cout << "лампа-"; // lamp - лампа
-        cin >> answer;
-        if (answer == "lamp") {
-            easyLevelTwo[0] = 1;
-        } else {
-            easyLevelTwo[0] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 2:
-        incNumber++;
-        cout << "обувь-"; // shoes - обувь
-        cin >> answer;
-        if (answer == "shoes") {
-            easyLevelTwo[1] = 1;
-        } else {
-            easyLevelTwo[1] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 3:
-        incNumber++;
-        cout << "боль-"; // pain - боль
-        cin >> answer;
-        if (answer == "pain") {
-            easyLevelTwo[2] = 1;
-        } else {
-            easyLevelTwo[2] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 4:
-        incNumber++;
-        cout << "ветер-"; // wind - ветер
-        cin >> answer;
-        if (answer == "wind") {
-            easyLevelTwo[3] = 1;
-        } else {
-            easyLevelTwo[3] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 5:
-        incNumber++;
-        cout << "наличные(деньги)-"; // cash - наличные (деньги)
-        cin >> answer;
-        if (answer == "cash") {
-            easyLevelTwo[4] = 1;
-        } else {
-            easyLevelTwo[4] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 6:
-        incNumber++;
-        cout << "скорость-"; // speed - скорость
-        cin >> answer;
-        if (answer == "speed") {
-            easyLevelTwo[5] = 1;
-        } else {
-            easyLevelTwo[5] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 7:
-        incNumber++;
-        cout << "ненависть-"; // hate - ненависть
-        cin >> answer;
-        if (answer == "hate") {
-            easyLevelTwo[6] = 1;
-        } else {
-            easyLevelTwo[6] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 8:
-        incNumber++;
-        cout << "привычка-"; // habit - привычка
-        cin >> answer;
-        if (answer == "habit") {
-            easyLevelTwo[7] = 1;
-        } else {
-            easyLevelTwo[7] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 9:
-        incNumber++;
-        cout << "слово-"; // word - слово
-        cin >> answer;
-        if (answer == "word") {
-            easyLevelTwo[8] = 1;
-        } else {
-            easyLevelTwo[8] = 0;
-        }
-        StartTwoEasyLevel();
-        break;
-    case 10:
-        cout << "серый-"; // grey - серый
-        cin >> answer;
-        if (answer == "grey") {
-            easyLevelTwo[9] = 1;
-        } else {
-            easyLevelTwo[9] = 0;
-        }
+        QuestionFunc(aEasyGameTwo,qEasyGameTwo);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Ответ      │      Слово     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 1 │       lamp       │      лампа     │ "
-             << easyLevelTwo[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 2 │       shoes      │      обувь     │ "
-             << easyLevelTwo[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 3 │       pain       │      боль      │ "
-             << easyLevelTwo[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 4 │       wind       │      ветер     │ "
-             << easyLevelTwo[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 5 │       cash       │    наличные    │ "
-             << easyLevelTwo[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 6 │       speed      │    скорость    │ "
-             << easyLevelTwo[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 7 │       hate       │    ненависть   │ "
-             << easyLevelTwo[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 8 │       habit      │    привычка    │ "
-             << easyLevelTwo[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 9 │       word       │      слово     │ "
-             << easyLevelTwo[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 10│       grey       │      серый     │ "
-             << easyLevelTwo[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartTwoNormalLevel()
 {
-    string answer = "";
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        cout << "беспокоить-"; // disturb - беспокоить, мешать
-        cin >> answer;
-        if (answer == "disturb") {
-            normalLevelTwo[0] = 1;
-        } else {
-            normalLevelTwo[0] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 2:
-        incNumber++;
-        cout << "глупый-"; // stupid - глупый
-        cin >> answer;
-        if (answer == "stupid") {
-            normalLevelTwo[1] = 1;
-        } else {
-            normalLevelTwo[1] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 3:
-        incNumber++;
-        cout << "опасность-"; // danger - опасность
-        cin >> answer;
-        if (answer == "danger") {
-            normalLevelTwo[2] = 1;
-        } else {
-            normalLevelTwo[2] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 4:
-        incNumber++;
-        cout << "выбор-"; // choice [чойс] - выбор
-        cin >> answer;
-        if (answer == "choice") {
-            normalLevelTwo[3] = 1;
-        } else {
-            normalLevelTwo[3] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 5:
-        incNumber++;
-        cout << "воздушный шар-"; // balloon [бэлу:н] - воздушный шар
-        cin >> answer;
-        if (answer == "balloon") {
-            normalLevelTwo[4] = 1;
-        } else {
-            normalLevelTwo[4] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 6:
-        incNumber++;
-        cout << "календарь-"; // calendar [кЭлиндэр] - календарь
-        cin >> answer;
-        if (answer == "calendar") {
-            normalLevelTwo[5] = 1;
-        } else {
-            normalLevelTwo[5] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 7:
-        incNumber++;
-        cout << "ноутбук-"; // laptop [лЭптоп] - ноутбук
-        cin >> answer;
-        if (answer == "laptop") {
-            normalLevelTwo[6] = 1;
-        } else {
-            normalLevelTwo[6] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 8:
-        incNumber++;
-        cout << "машина-"; // machine [мэшИ:н] - машина;
-        cin >> answer;
-        if (answer == "machine") {
-            normalLevelTwo[7] = 1;
-        } else {
-            normalLevelTwo[7] = 0;
-        }
-        StartTwoNormalLevel();
-        break;
-    case 9:
-        incNumber++;
-        cout << "ножницы-"; // scissors [сИзэрз] - ножницы
-        cin >> answer;
-        if (answer == "scissors") {
-            normalLevelTwo[8] = 1;
-        } else {
-            normalLevelTwo[8] = 0;
-        }
-        StartTwoNormalLevel();
-    case 10:
-        incNumber++;
-        cout << "очки-"; // glasses [глА:сиз] - очки
-        cin >> answer;
-        if (answer == "glasses") {
-            normalLevelTwo[9] = 1;
-        } else {
-            normalLevelTwo[9] = 0;
-        }
+        QuestionFunc(aNormalGameTwo,qNormalGameTwo);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Ответ      │      Слово     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 1 │      disturb     │   беспокоить   │ "
-             << normalLevelTwo[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 2 │      stupid      │     глупый     │ "
-             << normalLevelTwo[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 3 │      danger      │    опасность   │ "
-             << normalLevelTwo[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 4 │      choice      │      выбор     │ "
-             << normalLevelTwo[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 5 │      balloon     │  воздушный шар │ "
-             << normalLevelTwo[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 6 │      calendar    │    календарь   │ "
-             << normalLevelTwo[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 7 │      laptop      │     ноутбук    │ "
-             << normalLevelTwo[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 8 │      machine     │      машина    │ "
-             << normalLevelTwo[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 9 │      scissors    │     ножницы    │ "
-             << normalLevelTwo[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 10│      glasses     │      очки      │ "
-             << normalLevelTwo[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
-        PressAnyKey();
-        break;
-    }
+         PressAnyKey();
 }
 
 void StartTwoHardLevel()
 {
-    string answer = "";
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        cout << "сосед-"; // neighbor - сосед
-        cin >> answer;
-        if (answer == "neighbor") {
-            hardLevelTwo[0] = 1;
-        } else {
-            hardLevelTwo[0] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 2:
-        incNumber++;
-        cout << "коллега-"; // colleague - коллега
-        cin >> answer;
-        if (answer == "colleague") {
-            hardLevelTwo[1] = 1;
-        } else {
-            hardLevelTwo[1] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 3:
-        incNumber++;
-        cout << "инженер-"; // engineer - инженер
-        cin >> answer;
-        if (answer == "engineer") {
-            hardLevelTwo[2] = 1;
-        } else {
-            hardLevelTwo[2] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 4:
-        incNumber++;
-        cout << "микроволновка-"; // microwave - микроволновка
-        cin >> answer;
-        if (answer == "microwave") {
-            hardLevelTwo[3] = 1;
-        } else {
-            hardLevelTwo[3] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 5:
-        incNumber++;
-        cout << "бутерброд-"; // sandwich - бутерброд
-        cin >> answer;
-        if (answer == "sandwich") {
-            hardLevelTwo[4] = 1;
-        } else {
-            hardLevelTwo[4] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 6:
-        incNumber++;
-        cout << "овощи-"; // vegetables - овощи
-        cin >> answer;
-        if (answer == "vegetables") {
-            hardLevelTwo[5] = 1;
-        } else {
-            hardLevelTwo[5] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 7:
-        incNumber++;
-        cout << "арбуз-"; // watermelon - арбуз
-        cin >> answer;
-        if (answer == "watermelon") {
-            hardLevelTwo[6] = 1;
-        } else {
-            hardLevelTwo[6] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 8:
-        incNumber++;
-        cout << "блокнот-"; // notebook - блокнот
-        cin >> answer;
-        if (answer == "notebook") {
-            hardLevelTwo[7] = 1;
-        } else {
-            hardLevelTwo[7] = 0;
-        }
-        StartTwoHardLevel();
-        break;
-    case 9:
-        incNumber++;
-        cout << "чемодан-"; // suitcase - чемодан
-        cin >> answer;
-        if (answer == "suitcase") {
-            hardLevelTwo[8] = 1;
-        } else {
-            hardLevelTwo[8] = 0;
-        }
-        StartTwoHardLevel();
-    case 10:
-        cout << "клавиатура-"; // keyboard - клавиатура
-        cin >> answer;
-        if (answer == "keyboard") {
-            hardLevelTwo[9] = 1;
-        } else {
-            hardLevelTwo[9] = 0;
-        }
+		QuestionFunc(aHardGameTwo,qHardGameTwo);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Ответ      │      Слово     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 1 │     neighbor     │      сосед     │ "
-             << hardLevelTwo[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 2 │     colleague    │     коллега    │ "
-             << hardLevelTwo[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 3 │     engineer     │     инженер    │ "
-             << hardLevelTwo[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 4 │     microwave    │  микроволновка │ "
-             << hardLevelTwo[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 5 │     sandwich     │    бутерброд   │ "
-             << hardLevelTwo[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 6 │    vegetables    │      овощи     │ "
-             << hardLevelTwo[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 7 │    watermelon    │      арбуз     │ "
-             << hardLevelTwo[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 8 │     notebook     │     блокнот    │ "
-             << hardLevelTwo[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 9 │     suitcase     │     чемодан    │ "
-             << hardLevelTwo[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 10│     keyboard     │    клавиатура  │ "
-             << hardLevelTwo[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartGameLevelThree()
