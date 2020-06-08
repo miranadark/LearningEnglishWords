@@ -95,6 +95,42 @@ TEST(QuestionTests,QuestionFuncTest)
     ASSERT_EQ(YourAnswers[9],complex[9]);
 }
 
+TEST(QuestionTests,QuestionFuncGameThreeTest)
+{
+    // Given
+    int correct[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    int wrong[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int complex[] = {1, 0, 1, 1, 0, 0, 0, 0, 1, 0};
+    string allquestions[] = {"q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"};
+    int allanswers[] = {3, 2, 1, 2, 1, 3, 1, 2, 1, 2};
+    int answers1[] = {3, 2, 1, 2, 1, 3, 1, 2, 1, 2};
+    int answers2[] = {2, 1, 4, 3, 2, 1, 2, 3, 11, 3};
+    int answers3[] = {3, 22, 1, 2, 3, 2, 4, 3, 1, 0};
+    // When
+    testQuestionFuncGameThree(allanswers, allquestions, answers1);
+    // Then
+    int i;
+    for (i = 0; i < 10; i++)
+        ASSERT_EQ(YourAnswers[i], correct[i]);
+    // When
+    testQuestionFuncGameThree(allanswers, allquestions,answers2);
+    // Then
+    for(i = 0;i < 10;i++)
+        ASSERT_EQ(YourAnswers[i],wrong[i]);
+    // When
+    testQuestionFuncGameThree(allanswers, allquestions,answers3);
+    // Then
+    ASSERT_EQ(YourAnswers[0],complex[0]);
+    ASSERT_EQ(YourAnswers[1],complex[1]);
+    ASSERT_EQ(YourAnswers[2],complex[2]);
+    ASSERT_EQ(YourAnswers[3],complex[3]);
+    ASSERT_EQ(YourAnswers[4],complex[4]);
+    ASSERT_EQ(YourAnswers[5],complex[5]);
+    ASSERT_EQ(YourAnswers[6],complex[6]);
+    ASSERT_EQ(YourAnswers[7],complex[7]);
+    ASSERT_EQ(YourAnswers[8],complex[8]);
+    ASSERT_EQ(YourAnswers[9],complex[9]);
+}
 
 
 int main(int argc, char** argv)
