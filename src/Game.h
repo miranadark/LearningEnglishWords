@@ -22,7 +22,40 @@ string qNormalGameTwo[] = {"беспокоить-","глупый-","опасно
 string aNormalGameTwo[] = {"disturb","stupid","danger","choice","balloon","calendar","laptop","machine","scissors","glasses"};
 string qHardGameTwo[] = {"сосед-","коллега-","инженер-","микроволновка-","бутерброд-","овощи-","арбуз-","блокнот-","чемодан-","клавиатура-"};
 string aHardGameTwo[] = {"neighbor","colleague","engineer","microwave","sandwich","vegetables","watermelon","notebook","suitcase","keyboard"};
-int easyLevelThree[9], normalLevelThree[9], hardLevelThree[9];
+string qEasyGameThree[] = {"\t\tsweater\n1.свитер \t2.кофта \t3.водолазка",
+							"\t\tsock\n1.ботинок \t2.носок \t3.тапок\n",
+							"\t\ttie\n1.галстук \t2.шляпа \t3.монокль\n",
+							"\t\twallet\n1.чековая книжка \t2.скрепка \t3.бумажник\n",
+							"\t\twheel\n1.колесо \t2.руль \t3.педаль\n",
+							"\t\tpen\n1.ручка \t2.карандаш \t3.перо\n",
+							"\t\tbook\n1.тетрадь \t2.подставка \t3.книга\n",
+							"\t\tpaper\n1.бумага \t2.газета \t3.водолазка\n",
+							"\t\tsummer\n1.лето \t2.осень \t3.зима\n",
+							"\t\tjune\n1.июнь \t2.июнь \t3.август \n"};
+int aEasyGameThree[] = {1,2,1,3,1,1,3,1,1,1};
+string qNormalGameThree[] = {"\t\tgarbage\n1.таможня \t2.гараж \t3.мусор\n",
+							"\t\tguest\n1.товарищ \t2.гость \t3.коллега\n",
+							"\t\tlawyer\n1.адвокат \t2.повар \t3.учитель\n",
+							"\t\tsquirrel\n1.жираф \t2.белка \t3.птица\n",
+							"\t\tmonkey\n1.обезьяна \t2.медведь \t3.лошадь\n",
+							"\t\tstation\n1.парковка \t2.остановка \t3.станция\n",
+							"\t\tmountain\n1.гора \t2.холм \t3.низина\n",
+							"\t\tmirror\n1.диван \t2.зеркало \t3.ковер\n",
+							"\t\tporridge\n1.каша \t2.гриб \t3.салат\n",
+							"\t\tsurname\n1.имя \t2.фамилия \t3.отчество\n"};
+int aNormalGameThree[] = {3,2,1,2,1,3,1,2,1,2};
+string qHardGameThree[] = {"\t\tyesterday\n1.вчера \t2.сегодня \t3.завтра\n",
+							"\t\tbreakfast\n1.завтрак \t2.обед \t3.ужин\n",
+							"\t\tfrying pan\n1.чайник \t2.сковородка \t3.кастрюля\n",
+							"\t\traspberry\n1.вишня \t2.малина \t3.клубника\n",
+							"\t\tsidewalk\n1.асфальт \t2.тротуар \t3.тропинка\n",
+							"\t\tcrossroads\n1.перекрёсток \t2.поворотник \t3.заезд\n",
+							"\t\taccountant\n1.работник \t2.бухгалтер \t3.директор\n",
+							"\t\tjournalist\n1.журналист \t2.оператор \t3.диктор\n",
+							"\t\tcompetitor\n1.союзник \t2.соработник \t3.конкурент\n",
+							"\t\tacquaintance\n1.враг \t2.знакомый \t3.сосед\n"};
+int aHardGameThree[] = {1,1,2,2,2,1,2,1,3,2};
+
 void StartGameMenu();
 void PressAnyKey();
 
@@ -61,6 +94,16 @@ int CheckAnswer(string answer, string rightanswer, int i)
         return 0;
     }
 }
+int CheckAnswerGameThree(int answer, int rightanswer, int i)
+{
+    if (answer == rightanswer) {
+        YourAnswers[i] = 1;
+        return 1;
+    } else {
+        YourAnswers[i] = 0;
+        return 0;
+    }
+}
 
 int QuestionFunc(string *allanswers,string *allquestions)
 {
@@ -74,6 +117,22 @@ int QuestionFunc(string *allanswers,string *allquestions)
         rightanswer = allanswers[i];
         cin >> answer;
         CheckAnswer(answer,rightanswer,i);
+    }
+    return 1;
+}
+
+int QuestionFuncGameThree(int *allanswers,string *allquestions)
+{
+    int i;
+    int answer;
+    int rightanswer = 0;
+    string question = "";
+    for (i = 0;i < 10;i++){
+        question = allquestions[i];
+        cout << question + "\n";
+        rightanswer = allanswers[i];
+        answer = CheckInput();
+        CheckAnswerGameThree(answer,rightanswer,i);
     }
     return 1;
 }
@@ -511,551 +570,156 @@ void StartGameLevelThree()
 
 void StartThreeEasyLevel()
 {
-    int answer = 0;
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        cout << "\t\tsweater\n";                      //свитер
-        cout << "1.свитер \t2.кофта \t3.водолазка\n"; // sweater - свитер \
-                                                      // кофта \ водолазка
-        answer = CheckInput();
-        if (answer == 1) {
-            easyLevelThree[0] = 1;
-        } else {
-            easyLevelThree[0] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 2:
-        incNumber++;
-        cout << "\t\tsock\n";                      //носок
-        cout << "1.ботинок \t2.носок \t3.тапок\n"; // sock - носок \ ботинок \
-                                                   // тапок
-        answer = CheckInput();
-        if (answer == 2) {
-            easyLevelThree[1] = 1;
-        } else {
-            easyLevelThree[1] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 3:
-        incNumber++;
-        cout << "\t\ttie\n";                         //галстук
-        cout << "1.галстук \t2.шляпа \t3.монокль\n"; // tie - галстук \ шляпа \
-                                                     // монокль
-        answer = CheckInput();
-        if (answer == 1) {
-            easyLevelThree[2] = 1;
-        } else {
-            easyLevelThree[2] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 4:
-        incNumber++;
-        cout << "\t\twallet\n"; //бумажник
-        cout << "1.чековая книжка \t2.скрепка \t3.бумажник\n"; // wallet -
-                                                               // бумажник \
-                                                               // чековая книжка
-                                                               // \ скрепка
-        answer = CheckInput();
-        if (answer == 3) {
-            easyLevelThree[3] = 1;
-        } else {
-            easyLevelThree[3] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 5:
-        incNumber++;
-        cout << "\t\twheel\n";                    //колесо
-        cout << "1.колесо \t2.руль \t3.педаль\n"; // wheel - колесо \ руль \
-                                                  // педаль
-        answer = CheckInput();
-        if (answer == 1) {
-            easyLevelThree[4] = 1;
-        } else {
-            easyLevelThree[4] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 6:
-        incNumber++;
-        cout << "\t\tpen\n";                       //ручка
-        cout << "1.ручка \t2.карандаш \t3.перо\n"; // pen – ручка \ карандаш \
-                                                   // перо
-        answer = CheckInput();
-        if (answer == 1) {
-            easyLevelThree[5] = 1;
-        } else {
-            easyLevelThree[5] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 7:
-        incNumber++;
-        cout << "\t\tbook\n";                          //книга
-        cout << "1.тетрадь \t2.подставка \t3.книга\n"; // book - книга \ тетрадь
-                                                       // \ подставка
-        answer = CheckInput();
-        if (answer == 3) {
-            easyLevelThree[6] = 1;
-        } else {
-            easyLevelThree[6] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 8:
-        incNumber++;
-        cout << "\t\tpaper\n";                         //бумага
-        cout << "1.бумага \t2.газета \t3.водолазка\n"; // paper - бумага \
-                                                       // газета \ журнал
-        answer = CheckInput();
-        if (answer == 1) {
-            easyLevelThree[7] = 1;
-        } else {
-            easyLevelThree[7] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 9:
-        incNumber++;
-        cout << "\t\tsummer\n";                //лето
-        cout << "1.лето \t2.осень \t3.зима\n"; // summer - лето \ осень \ зима
-        answer = CheckInput();
-        if (answer == 1) {
-            easyLevelThree[8] = 1;
-        } else {
-            easyLevelThree[8] = 0;
-        }
-        StartThreeEasyLevel();
-        break;
-    case 10:
-        cout << "\t\tjune\n";                    //июнь
-        cout << "1.июнь \t2.июнь \t3.август \n"; // June - июнь \ июль \ август
-        answer = CheckInput();
-        if (answer == 2) {
-            easyLevelThree[9] = 1;
-        } else {
-            easyLevelThree[9] = 0;
-        }
+   		QuestionFuncGameThree(aEasyGameThree, qEasyGameThree);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Слово      │      Ответ     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 1 │      sweater     │     свитер     │ "
-             << easyLevelThree[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 2 │       sock       │      носок     │ "
-             << easyLevelThree[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 3 │       tie        │     галстук    │ "
-             << easyLevelThree[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 4 │      wallet      │     бумажник   │ "
-             << easyLevelThree[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 5 │      wheel       │     колесо     │ "
-             << easyLevelThree[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 6 │       pen        │      ручка     │ "
-             << easyLevelThree[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 7 │       book       │      книга     │ "
-             << easyLevelThree[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 8 │       paper      │     бумага     │ "
-             << easyLevelThree[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 9 │      summer      │      лето      │ "
-             << easyLevelThree[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 10│       june       │      июнь      │ "
-             << easyLevelThree[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartThreeNormalLevel()
 {
-    int answer = 0;
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        cout << "\t\tgarbage\n";                   //мусор
-        cout << "1.таможня \t2.гараж \t3.мусор\n"; // garbage - мусор \ гараж \
-                                                   // таможня
-        answer = CheckInput();
-        if (answer == 3) {
-            normalLevelThree[0] = 1;
-        } else {
-            normalLevelThree[0] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 2:
-        incNumber++;
-        cout << "\t\tguest\n";                       //гость
-        cout << "1.товарищ \t2.гость \t3.коллега\n"; // guest - гость \ товарищ
-                                                     // \ коллега
-        answer = CheckInput();
-        if (answer == 2) {
-            normalLevelThree[1] = 1;
-        } else {
-            normalLevelThree[1] = 0;
-        }
-        StartThreeNormalLevel();
-    case 3:
-        incNumber++;
-        cout << "\t\tlawyer\n";                      //адвокат
-        cout << "1.адвокат \t2.повар \t3.учитель\n"; // lawyer - адвокат \ повар
-                                                     // \ учитель
-        answer = CheckInput();
-        if (answer == 1) {
-            normalLevelThree[2] = 1;
-        } else {
-            normalLevelThree[2] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 4:
-        incNumber++;
-        cout << "\t\tsquirrel\n";                //белка
-        cout << "1.жираф \t2.белка \t3.птица\n"; // squirrel - белка \ птица \
-                                                 // жираф
-        answer = CheckInput();
-        if (answer == 2) {
-            normalLevelThree[3] = 1;
-        } else {
-            normalLevelThree[3] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 5:
-        incNumber++;
-        cout << "\t\tmonkey\n";                        //обезьяна
-        cout << "1.обезьяна \t2.медведь \t3.лошадь\n"; // monkey - обезьяна \
-                                                       // медведь \ лошадь
-        answer = CheckInput();
-        if (answer == 1) {
-            normalLevelThree[4] = 1;
-        } else {
-            normalLevelThree[4] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 6:
-        incNumber++;
-        cout << "\t\tstation\n";                          //станция
-        cout << "1.парковка \t2.остановка \t3.станция\n"; // station - станция \
-                                                          // остановка \ парковка
-        answer = CheckInput();
-        if (answer == 3) {
-            normalLevelThree[5] = 1;
-        } else {
-            normalLevelThree[5] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 7:
-        incNumber++;
-        cout << "\t\tmountain\n";               //гора
-        cout << "1.гора \t2.холм \t3.низина\n"; // mountain - гора \ холм \
-                                                // низина
-        answer = CheckInput();
-        if (answer == 1) {
-            normalLevelThree[6] = 1;
-        } else {
-            normalLevelThree[6] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 8:
-        incNumber++;
-        cout << "\t\tmirror\n";                    //зеркало
-        cout << "1.диван \t2.зеркало \t3.ковер\n"; // mirror - зеркало \ ковер \
-                                                   // диван
-        answer = CheckInput();
-        if (answer == 2) {
-            normalLevelThree[7] = 1;
-        } else {
-            normalLevelThree[7] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 9:
-        incNumber++;
-        cout << "\t\tporridge\n";              //каша
-        cout << "1.каша \t2.гриб \t3.салат\n"; // porridge - каша \ гриб \ салат
-        answer = CheckInput();
-        if (answer == 1) {
-            normalLevelThree[8] = 1;
-        } else {
-            normalLevelThree[8] = 0;
-        }
-        StartThreeNormalLevel();
-        break;
-    case 10:
-        cout << "\t\tsurname\n";                    //фамилия
-        cout << "1.имя \t2.фамилия \t3.отчество\n"; // surname - фамилия \ имя \
-                                                    // отчество
-        answer = CheckInput();
-        if (answer == 2) {
-            normalLevelThree[9] = 1;
-        } else {
-            normalLevelThree[9] = 0;
-        }
+    	QuestionFuncGameThree(aNormalGameThree, qNormalGameThree);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Слово      │      Ответ     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 1 │      garbage     │      мусор     │ "
-             << normalLevelThree[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 2 │       guest      │      гость     │ "
-             << normalLevelThree[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 3 │      lawyer      │     адвокат    │ "
-             << normalLevelThree[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 4 │     squirrel     │      белка     │ "
-             << normalLevelThree[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 5 │      monkey      │     обезьяна   │ "
-             << normalLevelThree[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 6 │      station     │     станция    │ "
-             << normalLevelThree[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 7 │      mountain    │      гора      │ "
-             << normalLevelThree[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 8 │      mirror      │     зеркало    │ "
-             << normalLevelThree[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 9 │     porridge     │      каша      │ "
-             << normalLevelThree[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 10│     surname      │     фамилия    │ "
-             << normalLevelThree[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 void StartThreeHardLevel()
 {
-    int answer = 0;
-    switch (incNumber) {
-    case 1:
-        incNumber++;
-        cout << "\t\tyesterday\n";                  //вчера
-        cout << "1.вчера \t2.сегодня \t3.завтра\n"; // yesterday - вчера
-                                                    // сегодня завтра
-        answer = CheckInput();
-        if (answer == 1) {
-            hardLevelThree[0] = 1;
-        } else {
-            hardLevelThree[0] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 2:
-        incNumber++;
-        cout << "\t\tbreakfast\n";               //завтрак
-        cout << "1.завтрак \t2.обед \t3.ужин\n"; // breakfast - завтрак  обед
-                                                 // ужин
-        answer = CheckInput();
-        if (answer == 1) {
-            hardLevelThree[1] = 1;
-        } else {
-            hardLevelThree[1] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 3:
-        incNumber++;
-        cout << "\t\tfrying pan\n";                       //сковородка
-        cout << "1.чайник \t2.сковородка \t3.кастрюля\n"; // frying pan -
-                                                          // сковородка
-                                                          // кастрюля чайник
-        answer = CheckInput();
-        if (answer == 2) {
-            hardLevelThree[2] = 1;
-        } else {
-            hardLevelThree[2] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 4:
-        incNumber++;
-        cout << "\t\traspberry\n";                   //малина
-        cout << "1.вишня \t2.малина \t3.клубника\n"; // raspberry - малина
-                                                     // клубника вишня
-        answer = CheckInput();
-        if (answer == 2) {
-            hardLevelThree[3] = 1;
-        } else {
-            hardLevelThree[3] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 5:
-        incNumber++;
-        cout << "\t\tsidewalk\n";                       //тротуар
-        cout << "1.асфальт \t2.тротуар \t3.тропинка\n"; // sidewalk - тротуар
-                                                        // асфальт тропинка
-        answer = CheckInput();
-        if (answer == 2) {
-            hardLevelThree[4] = 1;
-        } else {
-            hardLevelThree[4] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 6:
-        incNumber++;
-        cout << "\t\tcrossroads\n"; //перекрёсток
-        cout << "1.перекрёсток \t2.поворотник \t3.заезд\n"; // crossroads -
-                                                            // перекрёсток
-                                                            // поворотник заезд
-        answer = CheckInput();
-        if (answer == 1) {
-            hardLevelThree[5] = 1;
-        } else {
-            hardLevelThree[5] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 7:
-        incNumber++;
-        cout << "\t\taccountant\n";                        //бухгалтер
-        cout << "1.работник \t2.бухгалтер \t3.директор\n"; // accountant -
-                                                           // бухгалтер
-                                                           // работник директор
-        answer = CheckInput();
-        if (answer == 2) {
-            hardLevelThree[6] = 1;
-        } else {
-            hardLevelThree[6] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 8:
-        incNumber++;
-        cout << "\t\tjournalist\n";                      //журналист
-        cout << "1.журналист \t2.оператор \t3.диктор\n"; // journalist -
-                                                         // журналист диктор
-                                                         // оператор
-        answer = CheckInput();
-        if (answer == 1) {
-            hardLevelThree[7] = 1;
-        } else {
-            hardLevelThree[7] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 9:
-        incNumber++;
-        cout << "\t\tcompetitor\n";                         //конкурент
-        cout << "1.союзник \t2.соработник \t3.конкурент\n"; // competitor -
-                                                            // конкурент
-                                                            // союзник
-                                                            // соработник
-        answer = CheckInput();
-        if (answer == 3) {
-            hardLevelThree[8] = 1;
-        } else {
-            hardLevelThree[8] = 0;
-        }
-        StartThreeHardLevel();
-        break;
-    case 10:
-        incNumber++;
-        cout << "\t\tacquaintance\n";              //знакомый
-        cout << "1.враг \t2.знакомый \t3.сосед\n"; // acquaintance - знакомый
-                                                   // враг сосед
-        answer = CheckInput();
-        if (answer == 2) {
-            hardLevelThree[9] = 1;
-        } else {
-            hardLevelThree[9] = 0;
-        }
+    QuestionFuncGameThree(aHardGameThree, qHardGameThree);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤══════════════════╤════════════════╤═══╗\n"
                 "║ № │       Слово      │      Ответ     │ # ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 1 │     yesterday    │      вчера     │ "
-             << hardLevelThree[0]
+             << YourAnswers[0]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 2 │     breakfast    │     завтрак    │ "
-             << hardLevelThree[1]
+             << YourAnswers[1]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 3 │    frying pan    │    сковородка  │ "
-             << hardLevelThree[2]
+             << YourAnswers[2]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 4 │     raspberry    │      малина    │ "
-             << hardLevelThree[3]
+             << YourAnswers[3]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 5 │      sidewalk    │     тротуар    │ "
-             << hardLevelThree[4]
+             << YourAnswers[4]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 6 │     crossroads   │   перекрёсток  │ "
-             << hardLevelThree[5]
+             << YourAnswers[5]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 7 │     accountant   │    бухгалтер   │ "
-             << hardLevelThree[6]
+             << YourAnswers[6]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 8 │    journalist    │    журналист   │ "
-             << hardLevelThree[7]
+             << YourAnswers[7]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 9 │    competitor    │    конкурент   │ "
-             << hardLevelThree[8]
+             << YourAnswers[8]
              << " ║\n"
                 "╟───┼──────────────────┼────────────────┼───╢\n"
                 "║ 10│    acquaintance  │     знакомый   │ "
-             << hardLevelThree[9]
+             << YourAnswers[9]
              << " ║\n"
                 "╚═══╧══════════════════╧════════════════╧═══╝\n";
         "╚═══╧═════════════════╧═══╝\n";
         PressAnyKey();
-        break;
-    }
 }
 
 #endif // LEARNINGENGLISHWORDS_GAME_H
