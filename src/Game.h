@@ -8,6 +8,7 @@
 
 using namespace std;
 int incNumber = 0;
+int NumberQ = 0;
 int easyLevelOne[9], normalLevelOne[9], hardLevelOne[9];
 int easyLevelTwo[9], normalLevelTwo[9], hardLevelTwo[9];
 int easyLevelThree[9], normalLevelThree[9], hardLevelThree[9];
@@ -37,6 +38,17 @@ void PressAnyKey()
     if (getch()) {
         PrintGameMenu();
         StartGameMenu();
+    }
+}
+
+int CheckAnswer(string answer, string rightanswer)
+{  
+    if (answer == rightanswer) {
+        easyLevelOne[NumberQ] = 1;
+        return 1;
+    } else {
+        easyLevelOne[NumberQ] = 0;
+        return 0;
     }
 }
 
@@ -101,114 +113,95 @@ void StartGameLevelOne()
 void StartOneEasyLevel()
 {
     string answer = "";
+    string rightanswer = "";
     switch (incNumber) {
     case 1:
         incNumber++;
+        NumberQ = 0;
         cout << "driv...\n"; // driver
+        rightanswer = "er";
         cin >> answer;
-        if (answer == "er") {
-            easyLevelOne[0] = 1;
-        } else {
-            easyLevelOne[0] = 0;
-        }
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 2:
         incNumber++;
+        NumberQ++;
         cout << "chi...\n"; // chief
         cin >> answer;
-        if (answer == "ef") {
-            easyLevelOne[1] = 1;
-        } else {
-            easyLevelOne[1] = 0;
-        }
+        rightanswer = "ef";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 3:
         incNumber++;
+        NumberQ++;
         cout << "frie...\n"; // friend
         cin >> answer;
-        if (answer == "nd") {
-            easyLevelOne[2] = 1;
-        } else {
-            easyLevelOne[2] = 0;
-        }
+        rightanswer = "nd";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 4:
         incNumber++;
+        NumberQ++;
         cout << "plea...\n"; // please
         cin >> answer;
-        if (answer == "se") {
-            easyLevelOne[3] = 1;
-        } else {
-            easyLevelOne[3] = 0;
-        }
+        rightanswer = "se";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 5:
         incNumber++;
+        NumberQ++;
         cout << "sor...\n"; // sorry
         cin >> answer;
-        if (answer == "ry") {
-            easyLevelOne[4] = 1;
-        } else {
-            easyLevelOne[4] = 0;
-        }
+        rightanswer = "ry";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 6:
         incNumber++;
+        NumberQ++;
         cout << "gue...\n"; // guest
         cin >> answer;
-        if (answer == "st") {
-            easyLevelOne[5] = 1;
-        } else {
-            easyLevelOne[5] = 0;
-        }
+        rightanswer = "st";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 7:
         incNumber++;
+        NumberQ++;
         cout << "nie...\n"; // niece
         cin >> answer;
-        if (answer == "ce") {
-            easyLevelOne[6] = 1;
-        } else {
-            easyLevelOne[6] = 0;
-        }
+        rightanswer = "ce";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 8:
         incNumber++;
+        NumberQ++;
         cout << "cous...\n"; // cousin
         cin >> answer;
-        if (answer == "in") {
-            easyLevelOne[7] = 1;
-        } else {
-            easyLevelOne[7] = 0;
-        }
+        rightanswer = "in";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 9:
         incNumber++;
+        NumberQ++;
         cout << "work...\n"; // worker
         cin >> answer;
-        if (answer == "er") {
-            easyLevelOne[8] = 1;
-        } else {
-            easyLevelOne[8] = 0;
-        }
+        rightanswer = "er";
+        CheckAnswer(answer,rightanswer);
         StartOneEasyLevel();
         break;
     case 10:
+        NumberQ++;
         cout << "doct...\n"; // doctor
         cin >> answer;
-        if (answer == "or") {
-            easyLevelOne[9] = 1;
-        } else {
-            easyLevelOne[9] = 0;
-        }
+        rightanswer = "or";
+        CheckAnswer(answer,rightanswer);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤═════════════════╤═══╗\n"
                 "║ № │      Слово      │ # ║\n"
@@ -261,114 +254,95 @@ void StartOneEasyLevel()
 void StartOneNormalLevel()
 {
     string answer = "";
+    string rightanswer ="";
     switch (incNumber) {
     case 1:
         incNumber++;
+        NumberQ = 0;
         cout << "daugh...\n"; // daughter
         cin >> answer;
-        if (answer == "ter") {
-            normalLevelOne[0] = 1;
-        } else {
-            normalLevelOne[0] = 0;
-        }
+        rightanswer = "ter";
+		CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 2:
         incNumber++;
+        NumberQ++;
         cout << "eleph...\n"; // elephant
         cin >> answer;
-        if (answer == "ant") {
-            normalLevelOne[1] = 1;
-        } else {
-            normalLevelOne[1] = 0;
-        }
+        rightanswer = "ant";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 3:
         incNumber++;
+        NumberQ++;
         cout << "build...\n"; // building
         cin >> answer;
-        if (answer == "ing") {
-            normalLevelOne[2] = 1;
-        } else {
-            normalLevelOne[2] = 0;
-        }
+        rightanswer = "ing";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 4:
         incNumber++;
+        NumberQ++;
         cout << "univers...\n"; // university
         cin >> answer;
-        if (answer == "ity") {
-            normalLevelOne[3] = 1;
-        } else {
-            normalLevelOne[3] = 0;
-        }
+        rightanswer = "ity";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 5:
         incNumber++;
+        NumberQ++;
         cout << "saus...\n"; // sausage
         cin >> answer;
-        if (answer == "age") {
-            normalLevelOne[4] = 1;
-        } else {
-            normalLevelOne[4] = 0;
-        }
+        rightanswer = "age";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 6:
         incNumber++;
+        NumberQ++;
         cout << "hospi...\n"; // hospital
         cin >> answer;
-        if (answer == "tal") {
-            normalLevelOne[5] = 1;
-        } else {
-            normalLevelOne[5] = 0;
-        }
+        rightanswer = "tal";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 7:
         incNumber++;
+        NumberQ++;
         cout << "mount...\n"; // mountain
         cin >> answer;
-        if (answer == "ain") {
-            normalLevelOne[6] = 1;
-        } else {
-            normalLevelOne[6] = 0;
-        }
+        rightanswer = "ain";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 8:
         incNumber++;
+        NumberQ++;
         cout << "bedr...\n"; // bedroom
         cin >> answer;
-        if (answer == "oom") {
-            normalLevelOne[7] = 1;
-        } else {
-            normalLevelOne[7] = 0;
-        }
+        rightanswer = "oom";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 9:
         incNumber++;
+        NumberQ++;
         cout << "chim...\n"; // chimney
         cin >> answer;
-        if (answer == "ney") {
-            normalLevelOne[8] = 1;
-        } else {
-            normalLevelOne[8] = 0;
-        }
+        rightanswer = "ney";
+        CheckAnswer(answer,rightanswer);
         StartOneNormalLevel();
         break;
     case 10:
+        NumberQ++;
         cout << "wardr...\n"; // wardrobe
         cin >> answer;
-        if (answer == "obe") {
-            normalLevelOne[9] = 1;
-        } else {
-            normalLevelOne[9] = 0;
-        }
+        rightanswer = "obe";
+		CheckAnswer(answer,rightanswer);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤═════════════════╤═══╗\n"
                 "║ № │      Слово      │ # ║\n"
@@ -421,114 +395,94 @@ void StartOneNormalLevel()
 void StartOneHardLevel()
 {
     string answer = "";
+    string rightanswer = "";
     switch (incNumber) {
     case 1:
         incNumber++;
+        NumberQ = 0;
         cout << "strawb...\n"; // strawberry
         cin >> answer;
-        if (answer == "erry") {
-            hardLevelOne[0] = 1;
-        } else {
-            hardLevelOne[0] = 0;
-        }
+        rightanswer = "erry";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 2:
         incNumber++;
+        NumberQ++;
         cout << "vegeta...\n"; // vegetables
         cin >> answer;
-        if (answer == "bles") {
-            hardLevelOne[1] = 1;
-        } else {
-            hardLevelOne[1] = 0;
-        }
+        rightanswer = "bles";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 3:
         incNumber++;
+        NumberQ++;
         cout << "waterm...\n"; // watermelon
         cin >> answer;
-        if (answer == "elon") {
-            hardLevelOne[2] = 1;
-        } else {
-            hardLevelOne[2] = 0;
-        }
-        StartOneHardLevel();
+        rightanswer = "elon";
+        CheckAnswer(answer,rightanswer);
         break;
     case 4:
         incNumber++;
+        NumberQ++;
         cout << "pinea...\n"; // pineapple
         cin >> answer;
-        if (answer == "pple") {
-            hardLevelOne[3] = 1;
-        } else {
-            hardLevelOne[3] = 0;
-        }
+        rightanswer = "pple";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 5:
         incNumber++;
+        NumberQ++;
         cout << "handkerc...\n"; // handkerchief
         cin >> answer;
-        if (answer == "hief") {
-            hardLevelOne[4] = 1;
-        } else {
-            hardLevelOne[4] = 0;
-        }
+        rightanswer = "hief";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 6:
         incNumber++;
+        NumberQ++;
         cout << "experi...\n"; // experience
         cin >> answer;
-        if (answer == "ence") {
-            hardLevelOne[5] = 1;
-        } else {
-            hardLevelOne[5] = 0;
-        }
+        rightanswer = "ence";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 7:
         incNumber++;
+        NumberQ++;
         cout << "advan...\n"; // advantage
         cin >> answer;
-        if (answer == "tage") {
-            hardLevelOne[6] = 1;
-        } else {
-            hardLevelOne[6] = 0;
-        }
+        rightanswer = "tage";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 8:
         incNumber++;
+        NumberQ++;
         cout << "circumst...\n"; // circumstance
         cin >> answer;
-        if (answer == "ance") {
-            hardLevelOne[7] = 1;
-        } else {
-            hardLevelOne[7] = 0;
-        }
+        rightanswer = "ance";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 9:
         incNumber++;
+        NumberQ++;
         cout << "relation...\n"; // relationship
         cin >> answer;
-        if (answer == "ship") {
-            hardLevelOne[8] = 1;
-        } else {
-            hardLevelOne[8] = 0;
-        }
+        rightanswer = "ship";
+        CheckAnswer(answer,rightanswer);
         StartOneHardLevel();
         break;
     case 10:
+        NumberQ++;
         cout << "develop...\n"; // development
         cin >> answer;
-        if (answer == "ment") {
-            hardLevelOne[9] = 1;
-        } else {
-            hardLevelOne[9] = 0;
-        }
+        rightanswer = "ment";
+        CheckAnswer(answer,rightanswer);
         cout << "\n0 - значит неправильно / 1 - значит правильно!\n";
         cout << "╔═══╤═════════════════╤═══╗\n"
                 "║ № │      Слово      │ # ║\n"
