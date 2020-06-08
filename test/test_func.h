@@ -36,5 +36,13 @@ int testQuestionFuncGameThree(int *allanswers,string *allquestions,int *answers)
     return *YourAnswers;
 }
 
+int testCheckInput(string input)
+{
+    int Number = 0;
+    string getLevelNumber;
+    getLevelNumber = input;
+    Number = atoi(getLevelNumber.c_str());
+    return Number;
+}
 
 #endif // LEARNINGENGLISHWORDS_TEST_FUNC_H

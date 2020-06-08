@@ -132,6 +132,33 @@ TEST(QuestionTests,QuestionFuncGameThreeTest)
     ASSERT_EQ(YourAnswers[9],complex[9]);
 }
 
+TEST(CheckInput,CheckInputfunc)
+{
+    // Given
+    string input1 = "0";
+    string input2 = "2";
+    string input3 = "3";
+    string input4 = "444";
+    string input5 = "223122";
+    string input6 = "1";
+    string input7 = "100";
+    // When
+    int result1 = testCheckInput(input1);
+    int result2 = testCheckInput(input2);
+    int result3 = testCheckInput(input3);
+    int result4 = testCheckInput(input4);
+    int result5 = testCheckInput(input5);
+    int result6 = testCheckInput(input6);
+    int result7 = testCheckInput(input7);
+    // Then
+    ASSERT_EQ(result1,0);
+    ASSERT_EQ(result2,2);
+    ASSERT_EQ(result3,3);
+    ASSERT_EQ(result4,444);
+    ASSERT_EQ(result5,223122);
+    ASSERT_EQ(result6,1);
+    ASSERT_EQ(result7,100);
+}
 
 int main(int argc, char** argv)
 {
