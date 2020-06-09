@@ -2,11 +2,3 @@ dist: xenial
 
 script:
 - git ls-files src/!.txt  test/!.txt | xargs clang-format
-- cd test
-- ./install.sh
-- ./Gtests.exe
-- cd ..
-- cmake CMakeLists.txt 
-- make
-- cd test
-- ./install.sh && ./Gtests.exe
