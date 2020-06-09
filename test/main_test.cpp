@@ -5,7 +5,7 @@
 
 using namespace std;
 
-TEST(CheckAnswersTest,CheckAnswer)
+TEST(CheckAnswersTest, CheckAnswer)
 {
     // Given
     string answer1 = "apple";
@@ -17,17 +17,17 @@ TEST(CheckAnswersTest,CheckAnswer)
     string answer4 = "orange";
     string rightanswer4 = "ssaasasw2";
     // When
-    int result1 = CheckAnswer(answer1,rightanswer1,0);
-    int result2 = CheckAnswer(answer2,rightanswer2,1);
-    int result3 = CheckAnswer(answer3,rightanswer3,2);
-    int result4 = CheckAnswer(answer4,rightanswer4,3);
+    int result1 = CheckAnswer(answer1, rightanswer1, 0);
+    int result2 = CheckAnswer(answer2, rightanswer2, 1);
+    int result3 = CheckAnswer(answer3, rightanswer3, 2);
+    int result4 = CheckAnswer(answer4, rightanswer4, 3);
     // Then
-    ASSERT_EQ(result1,1);
-    ASSERT_EQ(result2,1);
-    ASSERT_EQ(result3,0);
-    ASSERT_EQ(result4,0);
+    ASSERT_EQ(result1, 1);
+    ASSERT_EQ(result2, 1);
+    ASSERT_EQ(result3, 0);
+    ASSERT_EQ(result4, 0);
 }
-TEST(CheckAnswersTest,CheckAnswerGameThree)
+TEST(CheckAnswersTest, CheckAnswerGameThree)
 {
     // Given
     int answer1 = 1;
@@ -58,50 +58,72 @@ TEST(CheckAnswersTest,CheckAnswerGameThree)
     ASSERT_EQ(result6, 0);
 }
 
-TEST(QuestionTests,QuestionFuncTest)
-{
-    // Given
-    int correct[] = {1,1,1,1,1,1,1,1,1,1};
-    int wrong[] = {0,0,0,0,0,0,0,0,0,0};
-    int complex[] = {1,0,1,1,0,0,0,0,1,0};
-    string allquestions[] = {"driv","chi","frie","plea","sor","gue","nie","cous","work","doct"};
-    string allanswers[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
-    string answers1[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
-    string answers2[] = {"ere","ee","wwwww","ses","rypt","stw","w","qe","e","orer"};
-    string answers3[] = {"er","ewf","nd","se","reey","sqt","cee","irrn","er","orrrrrrr"};
-    // When
-    testQuestionFunc(allanswers, allquestions,answers1);
-    // Then
-    int i;
-    for(i = 0;i < 10;i++)
-        ASSERT_EQ(YourAnswers[i],correct[i]);
-    // When
-    testQuestionFunc(allanswers, allquestions,answers2);
-    // Then
-    for(i = 0;i < 10;i++)
-        ASSERT_EQ(YourAnswers[i],wrong[i]);
-    // When
-    testQuestionFunc(allanswers, allquestions,answers3);
-    // Then
-    ASSERT_EQ(YourAnswers[0],complex[0]);
-    ASSERT_EQ(YourAnswers[1],complex[1]);
-    ASSERT_EQ(YourAnswers[2],complex[2]);
-    ASSERT_EQ(YourAnswers[3],complex[3]);
-    ASSERT_EQ(YourAnswers[4],complex[4]);
-    ASSERT_EQ(YourAnswers[5],complex[5]);
-    ASSERT_EQ(YourAnswers[6],complex[6]);
-    ASSERT_EQ(YourAnswers[7],complex[7]);
-    ASSERT_EQ(YourAnswers[8],complex[8]);
-    ASSERT_EQ(YourAnswers[9],complex[9]);
-}
-
-TEST(QuestionTests,QuestionFuncGameThreeTest)
+TEST(QuestionTests, QuestionFuncTest)
 {
     // Given
     int correct[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     int wrong[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     int complex[] = {1, 0, 1, 1, 0, 0, 0, 0, 1, 0};
-    string allquestions[] = {"q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"};
+    string allquestions[] = {"driv",
+                             "chi",
+                             "frie",
+                             "plea",
+                             "sor",
+                             "gue",
+                             "nie",
+                             "cous",
+                             "work",
+                             "doct"};
+    string allanswers[]
+            = {"er", "ef", "nd", "se", "ry", "st", "ce", "in", "er", "or"};
+    string answers1[]
+            = {"er", "ef", "nd", "se", "ry", "st", "ce", "in", "er", "or"};
+    string answers2[] = {
+            "ere", "ee", "wwwww", "ses", "rypt", "stw", "w", "qe", "e", "orer"};
+    string answers3[] = {"er",
+                         "ewf",
+                         "nd",
+                         "se",
+                         "reey",
+                         "sqt",
+                         "cee",
+                         "irrn",
+                         "er",
+                         "orrrrrrr"};
+    // When
+    testQuestionFunc(allanswers, allquestions, answers1);
+    // Then
+    int i;
+    for (i = 0; i < 10; i++)
+        ASSERT_EQ(YourAnswers[i], correct[i]);
+    // When
+    testQuestionFunc(allanswers, allquestions, answers2);
+    // Then
+    for (i = 0; i < 10; i++)
+        ASSERT_EQ(YourAnswers[i], wrong[i]);
+    // When
+    testQuestionFunc(allanswers, allquestions, answers3);
+    // Then
+    ASSERT_EQ(YourAnswers[0], complex[0]);
+    ASSERT_EQ(YourAnswers[1], complex[1]);
+    ASSERT_EQ(YourAnswers[2], complex[2]);
+    ASSERT_EQ(YourAnswers[3], complex[3]);
+    ASSERT_EQ(YourAnswers[4], complex[4]);
+    ASSERT_EQ(YourAnswers[5], complex[5]);
+    ASSERT_EQ(YourAnswers[6], complex[6]);
+    ASSERT_EQ(YourAnswers[7], complex[7]);
+    ASSERT_EQ(YourAnswers[8], complex[8]);
+    ASSERT_EQ(YourAnswers[9], complex[9]);
+}
+
+TEST(QuestionTests, QuestionFuncGameThreeTest)
+{
+    // Given
+    int correct[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    int wrong[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int complex[] = {1, 0, 1, 1, 0, 0, 0, 0, 1, 0};
+    string allquestions[]
+            = {"q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"};
     int allanswers[] = {3, 2, 1, 2, 1, 3, 1, 2, 1, 2};
     int answers1[] = {3, 2, 1, 2, 1, 3, 1, 2, 1, 2};
     int answers2[] = {2, 1, 4, 3, 2, 1, 2, 3, 11, 3};
@@ -113,26 +135,26 @@ TEST(QuestionTests,QuestionFuncGameThreeTest)
     for (i = 0; i < 10; i++)
         ASSERT_EQ(YourAnswers[i], correct[i]);
     // When
-    testQuestionFuncGameThree(allanswers, allquestions,answers2);
+    testQuestionFuncGameThree(allanswers, allquestions, answers2);
     // Then
-    for(i = 0;i < 10;i++)
-        ASSERT_EQ(YourAnswers[i],wrong[i]);
+    for (i = 0; i < 10; i++)
+        ASSERT_EQ(YourAnswers[i], wrong[i]);
     // When
-    testQuestionFuncGameThree(allanswers, allquestions,answers3);
+    testQuestionFuncGameThree(allanswers, allquestions, answers3);
     // Then
-    ASSERT_EQ(YourAnswers[0],complex[0]);
-    ASSERT_EQ(YourAnswers[1],complex[1]);
-    ASSERT_EQ(YourAnswers[2],complex[2]);
-    ASSERT_EQ(YourAnswers[3],complex[3]);
-    ASSERT_EQ(YourAnswers[4],complex[4]);
-    ASSERT_EQ(YourAnswers[5],complex[5]);
-    ASSERT_EQ(YourAnswers[6],complex[6]);
-    ASSERT_EQ(YourAnswers[7],complex[7]);
-    ASSERT_EQ(YourAnswers[8],complex[8]);
-    ASSERT_EQ(YourAnswers[9],complex[9]);
+    ASSERT_EQ(YourAnswers[0], complex[0]);
+    ASSERT_EQ(YourAnswers[1], complex[1]);
+    ASSERT_EQ(YourAnswers[2], complex[2]);
+    ASSERT_EQ(YourAnswers[3], complex[3]);
+    ASSERT_EQ(YourAnswers[4], complex[4]);
+    ASSERT_EQ(YourAnswers[5], complex[5]);
+    ASSERT_EQ(YourAnswers[6], complex[6]);
+    ASSERT_EQ(YourAnswers[7], complex[7]);
+    ASSERT_EQ(YourAnswers[8], complex[8]);
+    ASSERT_EQ(YourAnswers[9], complex[9]);
 }
 
-TEST(CheckInput,CheckInputfunc)
+TEST(CheckInput, CheckInputfunc)
 {
     // Given
     string input1 = "0";
@@ -151,13 +173,13 @@ TEST(CheckInput,CheckInputfunc)
     int result6 = testCheckInput(input6);
     int result7 = testCheckInput(input7);
     // Then
-    ASSERT_EQ(result1,0);
-    ASSERT_EQ(result2,2);
-    ASSERT_EQ(result3,3);
-    ASSERT_EQ(result4,444);
-    ASSERT_EQ(result5,223122);
-    ASSERT_EQ(result6,1);
-    ASSERT_EQ(result7,100);
+    ASSERT_EQ(result1, 0);
+    ASSERT_EQ(result2, 2);
+    ASSERT_EQ(result3, 3);
+    ASSERT_EQ(result4, 444);
+    ASSERT_EQ(result5, 223122);
+    ASSERT_EQ(result6, 1);
+    ASSERT_EQ(result7, 100);
 }
 
 int main(int argc, char** argv)
