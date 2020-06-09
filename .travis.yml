@@ -1,5 +1,4 @@
 dist: xenial
 
 script:
-  - git ls-files src/!*.txt | xargs clang-format -i && git diff --exit-code
-  - git ls-files test/!*.txt | xargs clang-format -i && git diff --exit-code
+- git ls-files src/!.txt | xargs clang-format -i &&  ls-files test/!.txt | xargs clang-format && git diff --exit-code
