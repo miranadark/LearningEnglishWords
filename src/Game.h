@@ -8,7 +8,6 @@
 
 using namespace std;
 int incNumber = 0;
-int NumberQ = 0;
 int YourAnswers[9];
 string qEasyGameOne[] = {"driv","chi","frie","plea","sor","gue","nie","cous","work","doct"};
 string aEasyGameOne[] = {"er","ef","nd","se","ry","st","ce","in","er","or"};
@@ -31,7 +30,7 @@ string qEasyGameThree[] = {"\t\tsweater\n1.свитер \t2.кофта \t3.во�
 							"\t\tbook\n1.тетрадь \t2.подставка \t3.книга\n",
 							"\t\tpaper\n1.бумага \t2.газета \t3.водолазка\n",
 							"\t\tsummer\n1.лето \t2.осень \t3.зима\n",
-							"\t\tjune\n1.июнь \t2.июнь \t3.август \n"};
+							"\t\tjune\n1.июнь \t2.июль \t3.август \n"};
 int aEasyGameThree[] = {1,2,1,3,1,1,3,1,1,1};
 string qNormalGameThree[] = {"\t\tgarbage\n1.таможня \t2.гараж \t3.мусор\n",
 							"\t\tguest\n1.товарищ \t2.гость \t3.коллега\n",
@@ -118,13 +117,13 @@ int QuestionFunc(string *allanswers,string *allquestions)
         cin >> answer;
         CheckAnswer(answer,rightanswer,i);
     }
-    return 1;
+    return *YourAnswers;
 }
 
 int QuestionFuncGameThree(int *allanswers,string *allquestions)
 {
     int i;
-    int answer;
+    int answer = 0;
     int rightanswer = 0;
     string question = "";
     for (i = 0;i < 10;i++){
@@ -134,7 +133,7 @@ int QuestionFuncGameThree(int *allanswers,string *allquestions)
         answer = CheckInput();
         CheckAnswerGameThree(answer,rightanswer,i);
     }
-    return 1;
+    return *YourAnswers;
 }
 
 void StartGameMenu()
