@@ -1,0 +1,5 @@
+"D:\Program Files\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "D:\User Files\Sibsutis\Trpo\LearningEnglishWords"
+-- Could NOT find PythonInterp (missing: PYTHON_EXECUTABLE) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/User Files/Sibsutis/Trpo/LearningEnglishWords/cmake-build-debug

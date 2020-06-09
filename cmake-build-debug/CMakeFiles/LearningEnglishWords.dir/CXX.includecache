@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/CheckInput.h
+iostream
+-
+
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/Game.h
+CheckInput.h
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/CheckInput.h
+GameMenu.h
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/GameMenu.h
+conio.h
+-
+iostream
+-
+
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/GameMenu.h
+iostream
+-
+
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/main.cpp
+Game.h
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/Game.h
+GameMenu.h
+D:/User Files/Sibsutis/Trpo/LearningEnglishWords/src/GameMenu.h
+windows.h
+-
+
