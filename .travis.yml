@@ -1,4 +1,4 @@
 dist: xenial
 
 script:
-- git ls-files src/!.txt  test/!.txt | xargs clang-format && make test
+- git ls-files src/!.txt  test/!.txt | xargs clang-format
